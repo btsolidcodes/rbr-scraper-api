@@ -1,30 +1,33 @@
-# Relatório Brasil - Sistema Web: rBR Scraper .NET API
+# Brazil Report - Web System: rBR Scraper .NET API
 
-![Logo](https://github.com/btsolidcodes/rbr-scraper-api/blob/main/rBR.Scraper/rBR.Scraper.Service/wwwroot/Image/01.png)
+![description](https://github.com/relatorio-brasil/rbr-api-scraper/blob/dev/rBR.Scraper/rBR.Scraper.Service/wwwroot/Image/01.png)
 
-**Serviço Web (API) de ferramentas de importação de dados de redes sociais .NET API.**
+**.NET API Web Service for social media data import tools.**
 
-> Repositório destinado aos serviços .NET de obtenção de dados de redes sociais. Atualmente, tais dados são oriundos do sistema APIFY de aquisição de dados por scrapers.
-> **Atualizar este arquivo com instruções importantes à equipe de desenvolvimento.**
+> Repository intended for .NET services responsible for obtaining social media data. Currently, such data comes from the APIFY system for data acquisition through scrapers.
+> **Update this file with important instructions for the development team.**
 
-# Requisitos técnicos do projeto
+# Project Technical Requirements
 
 * .NET 8.0 LTS;
-* Seguir estilo de código proposto pela Microsoft;
-* Seguir padrões de arquitetura;
-* Manter documentação XML do código.
+* Follow the coding style proposed by Microsoft;
+* Follow architectural standards;
+* Maintain XML code documentation.
 
-## Autenticação
-A autenticação de cada aplicação será realizada pela associação das informações: **Token de Acesso, Políticas de Autenticação e Autorização e Chaves de Assinatura**.
-Para autenticar-se na aplicação rBR Scraper com Políticas de Autenticação e Autorização Configuradas, assim como as Chaves de Assinatura, é necessário possuir o Token de Acesso obtido diretamente do sistema **rBR Auth Manager**.
+## Authentication
 
-### Obtenção do Token de Autenticação:
-> No presente momento, o sistema de autenticação rBR Auth Manager ainda não está em ambientes de Desenvolvimento, Homologação e/ou Produção. Portanto, deve ser executado localmente para permitir a obtenção do Token de Acesso.
+Authentication for each application will be performed by associating the following information: **Access Token, Authentication and Authorization Policies, and Signing Keys**.
 
-* Local: http://localhost:5001/API/v1.0/User/Account/Login
-* Método: POST;
+To authenticate in the rBR Scraper application with configured Authentication and Authorization Policies, as well as Signing Keys, it is necessary to have the Access Token obtained directly from the **rBR Auth Manager** system.
+
+### Obtaining the Authentication Token:
+
+> At the present moment, the rBR Auth Manager authentication system is not yet available in Development, Staging and/or Production environments. Therefore, it must be executed locally to allow obtaining the Access Token.
+
+* Location: http://localhost:5001/API/v1.0/User/Account/Login
+* Method: POST;
 * Header: Content-Type: application/json;
-* Body: 
+* Body:
 ```
 {
    "UserName":"{username}",
@@ -34,368 +37,381 @@ Para autenticar-se na aplicação rBR Scraper com Políticas de Autenticação e
 * Response:
 ```
 {
-   "AccessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
-   "Expires": "06/05/2025 11:59:21 -03:00"
+	"AccessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+	"Expires": "06/05/2025 11:59:21 -03:00"
 }
 ```
+## Static Environment Configurations
 
-## Configurações estáticas de ambientes
-Diversas configurações estáticas são necessárias para o funcionamento correto da aplicação. Entre estas, estão: Autenticação e Autorização, Banco de Dados, CORS, Culture e Swagger.
+Several static configurations are necessary for the correct functioning of the application. Among them are: Authentication and Authorization, Database, CORS, Culture and Swagger.
 
-### Configurações de segurança para o token JWT (JWKS)
-O arquivo de configuração appsettings.{*environment*}.json deve conter, dentro do objeto *BaseAuthSettings*, o objeto:
+### Security Settings for the JWT token (JWKS)
+
+The configuration file `appsettings.{*environment*}.json` must contain, inside the *BaseAuthSettings* object, the object:
 ```
 {
-  "JwksSettings": {
-      "JwksSettings": {
-      "DefaultClockSkew": 15,
-      "Issuer": "rBR",
-      "IssuerSigningKey": "6a66eb7a-ba32-4ea6-b53d-2ede9bffb3e7",
-      "Key": "6a66eb7a-ba32-4ea6-b53d-2ede9bffb3e7"
-    }
-  }
-}
-```
-### Configurações de segurança para as Políticas de Autorização
-Visto que o controle completo dos perfis de autorização ainda não está em operação atualmente, as aplicações contam com todos os perfis que já foram apresentados/usados em algum momento. Portanto, o arquivo de configuração appsettings.{*environment*}.json deve conter, dentro do objeto *BaseAuthSettings*, o objeto
-```
-{
-  "AuthorizationPolicySettings": {
-    "AuthPolicies": [
-      {
-        "Claims": [
-          {
-            "Type": "Admin",
-            "Values": [
-              "rBR"
-            ]
-          },
-          {
-            "Type": "Application",
-            "Values": [
-              "rBR"
-            ]
-          },
-          {
-            "Type": "Client",
-            "Values": [
-              "rBR"
-            ]
-          },
-          {
-            "Type": "DisplayName"
-          },
-          {
-            "Type": "Email"
-          },
-          {
-            "Type": "Status",
-            "Values": [
-              "1"
-            ]
-          },
-          {
-            "Type": "UserName"
-          }
-        ],
-        "Name": "rBR Admin"
-      },
-      {
-        "Claims": [
-          {
-            "Type": "Admin",
-            "Values": [
-              "rBR"
-            ]
-          },
-          {
-            "Type": "Application",
-            "Values": [
-              "rBR"
-            ]
-          },
-          {
-            "Type": "Client",
-            "Values": [
-              "rBR"
-            ]
-          },
-          {
-            "Type": "DisplayName"
-          },
-          {
-            "Type": "Email"
-          },
-          {
-            "Type": "Status",
-            "Values": [
-              "1"
-            ]
-          },
-          {
-            "Type": "UserName"
-          }
-        ],
-        "Name": "rBR Support"
-      },
-      {
-        "Claims": [
-          {
-            "Type": "Application",
-            "Values": [
-              "rBR"
-            ]
-          },
-          {
-            "Type": "Client",
-            "Values": [
-              "rBR"
-            ]
-          },
-          {
-            "Type": "DisplayName"
-          },
-          {
-            "Type": "Email"
-          },
-          {
-            "Type": "Status",
-            "Values": [
-              "1"
-            ]
-          },
-          {
-            "Type": "UserName"
-          }
-        ],
-        "Name": "rBR Client"
-      },
-      {
-        "Claims": [
-          {
-            "Type": "Application",
-            "Values": [
-              "rBR"
-            ]
-          },
-          {
-            "Type": "DisplayName"
-          },
-          {
-            "Type": "Email"
-          },
-          {
-            "Type": "Status",
-            "Values": [
-              "1"
-            ]
-          },
-          {
-            "Type": "UserName"
-          }
-        ],
-        "Name": "rBR User"
-      }
-    ]
-  }
-}
-```
-### Configurações de validação para a Autenticação dos tokens JWT
-O objecto *BaseAuthSettings* deve conter o objeto:
-```
-{
-	"JwtAuthenticationSettings": {
-	  "RequireAudience": true,
-	  "RequireExpirationTime": true,
-	  "RequireHttpsMetadata": true,
-	  "RequireSignedTokens": true,
-	  "SaveToken": true,
-	  "ValidateAudience": true,
-	  "ValidateIssuer": true,
-	  "ValidateIssuerSigningKey": true,
-	  "ValidateLifetime": true,
-	  "ValidAudience": "rBR"
+	"JwksSettings": {
+		"JwksSettings": {
+			"DefaultClockSkew": 15,
+			"Issuer": "rBR",
+			"IssuerSigningKey": "6a66eb7a-ba32-4ea6-b53d-2ede9bffb3e7",
+			"Key": "6a66eb7a-ba32-4ea6-b53d-2ede9bffb3e7"
+		}
 	}
 }
 ```
-### Configurações de Cross-Origin Resource Sharing - CORS
-A configuração de CORS foi montada como provisionamento futuro. Ou seja, não é enforçada mas está disponível. Para que seja disponibilizada em código, o arquivo appsettings.{*environment*}.json deve conter o objeto:
+
+### Security Settings for Authorization Policies
+
+Since full control of authorization profiles is not yet operational, applications currently include all profiles that have been presented/used at some point. Therefore, the configuration file `appsettings.{*environment*}.json` must contain, inside the *BaseAuthSettings* object, the object:
 ```
 {
-    "BaseCorsPolicySettings": {
-    "Headers": [],
-    "Methods": [],
-    "Name": "rBR",
-    "Origins": []
-  }
+   "AuthorizationPolicySettings":{
+      "AuthPolicies":[
+         {
+            "Claims":[
+               {
+                  "Type":"Admin",
+                  "Values":[
+                     "rBR"
+                  ]
+               },
+               {
+                  "Type":"Application",
+                  "Values":[
+                     "rBR"
+                  ]
+               },
+               {
+                  "Type":"Client",
+                  "Values":[
+                     "rBR"
+                  ]
+               },
+               {
+                  "Type":"DisplayName"
+               },
+               {
+                  "Type":"Email"
+               },
+               {
+                  "Type":"Status",
+                  "Values":[
+                     "1"
+                  ]
+               },
+               {
+                  "Type":"UserName"
+               }
+            ],
+            "Name":"rBR Admin"
+         },
+         {
+            "Claims":[
+               {
+                  "Type":"Admin",
+                  "Values":[
+                     "rBR"
+                  ]
+               },
+               {
+                  "Type":"Application",
+                  "Values":[
+                     "rBR"
+                  ]
+               },
+               {
+                  "Type":"Client",
+                  "Values":[
+                     "rBR"
+                  ]
+               },
+               {
+                  "Type":"DisplayName"
+               },
+               {
+                  "Type":"Email"
+               },
+               {
+                  "Type":"Status",
+                  "Values":[
+                     "1"
+                  ]
+               },
+               {
+                  "Type":"UserName"
+               }
+            ],
+            "Name":"rBR Support"
+         },
+         {
+            "Claims":[
+               {
+                  "Type":"Application",
+                  "Values":[
+                     "rBR"
+                  ]
+               },
+               {
+                  "Type":"Client",
+                  "Values":[
+                     "rBR"
+                  ]
+               },
+               {
+                  "Type":"DisplayName"
+               },
+               {
+                  "Type":"Email"
+               },
+               {
+                  "Type":"Status",
+                  "Values":[
+                     "1"
+                  ]
+               },
+               {
+                  "Type":"UserName"
+               }
+            ],
+            "Name":"rBR Client"
+         },
+         {
+            "Claims":[
+               {
+                  "Type":"Application",
+                  "Values":[
+                     "rBR"
+                  ]
+               },
+               {
+                  "Type":"DisplayName"
+               },
+               {
+                  "Type":"Email"
+               },
+               {
+                  "Type":"Status",
+                  "Values":[
+                     "1"
+                  ]
+               },
+               {
+                  "Type":"UserName"
+               }
+            ],
+            "Name":"rBR User"
+         }
+      ]
+   }
 }
 ```
-### Configurações de bancos de dados
-As configurações de bancos de dados ainda são locais, visto que os ambientes de Desenvolvimento, Homologação e/ou Produção ainda não estão disponíveis. A configuração suporta bancos MySQL e MSSQL Server. Para aplicá-las, o campo *DatabaseType* pode ser alterado de 0 (MySQL) para 1 (MSSQL). O arquivo appsettings.{*environment*}.json deve conter o objeto:
+### JWT Token Authentication Validation Settings
+
+The *BaseAuthSettings* object must contain the object:
+```
+{
+	"JwtAuthenticationSettings": {
+		"RequireAudience": true,
+		"RequireExpirationTime": true,
+		"RequireHttpsMetadata": true,
+		"RequireSignedTokens": true,
+		"SaveToken": true,
+		"ValidateAudience": true,
+		"ValidateIssuer": true,
+		"ValidateIssuerSigningKey": true,
+		"ValidateLifetime": true,
+		"ValidAudience": "rBR"
+	}
+}
+```
+
+### Cross-Origin Resource Sharing - CORS Settings
+
+The CORS configuration was set up as future provisioning. That is, it is not enforced but is available. For it to be made available in code, the file `appsettings.{*environment*}.json` must contain the object:
+```
+{
+	"BaseCorsPolicySettings": {
+		"Headers": [],
+		"Methods": [],
+		"Name": "rBR",
+		"Origins": []
+	}	
+}
+```
+### Database Settings
+
+Database configurations are still local, as Development, Staging and/or Production environments are not yet available. The configuration supports MySQL and MSSQL Server databases. To apply them, the *DatabaseType* field can be changed from 0 (MySQL) to 1 (MSSQL). The file `appsettings.{*environment*}.json` must contain the object:
 ```
 {
 	"BaseContextSettings": {
 		"ConnectionStrings": [
-			{
-		      "ConnectionStringMySQL": "server=127.0.0.1;port=3306;database=rBRScraper_Development;uid={seu_usuário};password={sua_senha}",
-		      "ConnectionStringSQLServer": "Data Source={sua_instância}; Initial Catalog=rBRScraper_Development; Integrated Security=False; User Id={seu_usuário}; Password={sua_senha}; TrustServerCertificate=true",
-		      "ContextName": "rBRScraperContext",
-		      "DatabaseType": 0
-	    }
-	  ]
+				{
+				"ConnectionStringMySQL": "server=127.0.0.1;port=3306;database=rBRScraper_Development;uid={your_user};password={your_password}",
+				"ConnectionStringSQLServer": "Data Source={sua_instância}; Initial Catalog=rBRScraper_Development; Integrated Security=False; User Id={seu_usuário}; Password={sua_senha}; TrustServerCertificate=true",
+				"ContextName": "rBRScraperContext",
+				"DatabaseType": 0
+				}
+			]
+		}
 	}
-}
 ```
-### Configurações de cultura
-As configurações de cultura estabelecem quais as culturas suportadas pelos controladores da API. O arquivo appsettings.{*environment*}.json deve conter o objeto:
+
+### Culture Settings
+
+Culture settings establish which cultures are supported by the API controllers. The file `appsettings.{*environment*}.json` must contain the object:
 ```
 {
 	"BaseControllersSettings": {
-	  "SupportedCultures": [
-	    "en-US",
-	    "pt-BR"
-	  ]
-	}
-}
-```
-### Configurações de Swagger
-O arquivo appsettings.{*environment*}.json deve conter o objeto:
-```
-{
-	"BaseSwaggerSettings": {
-		"ApiExplorer": {
-			"GroupNameFormat": "V.v",
-			"SubstitutionFormat": "V.v"
-		},
-		"Description": "<br>![rBR Scraper - Logo](/Image/01.png)",
-		"DocumentName": "rBR Scraper - Web API",
-		"GenerateExamples": true,
-		"GenerateXmlObjects": true,
-		"OpenApiSecurityScheme": {
-			"Description": "JWT authorization header using the Bearer schema. Type 'Bearer' [space] and then your token in the text input below. Example: Bearer {token}",
-			"Name": "Authorization"
-		},
-		"Title": "rBR Scraper - Development",
-		"UseControllerSummaryAsTagDescription": true,
-		"UseRouteNameAsOperationId": false,
-		"UseXmlDocumentation": true
-	}
-}
-```
-### Configurações de conexão com o sistema APIFY:
-O arquivo appsettings.{*environment*}.json deve conter o objeto:
-```
-{
-	"ApiFySettings": {
-		"AccessToken": "apify_api_NEF0KDgXWsMDq6O6CMs3FzMurUhVij1NhxMR",
-		"UrlBase": "https://api.apify.com/v2",
-		"EndpointListActors": "/acts",
-		"EndpointGetActor": "/acts/{0}",
-		"EndpointListRuns": "/acts/{0}/runs",
-		"EndpointGetDatasetItems": "/datasets/{0}/items?format=json&skipEmpty=true&skipHidden=true"
-	}
-}
-```
-### Configurações de Scrapers APIFY ativos:
-```
-{
-	"ScraperSettings": {
-		"ActiveConfiguredScrapers": [
-			"shu8hvrXbJbY3Eb9W",
-			"dSCLg0C3YEZ83HzYX"
+		"SupportedCultures": [
+			"en-US",
+			"pt-BR"
 		]
 	}
 }
 ```
 
-## Funcionalidades
+### Swagger Settings
+
+The file `appsettings.{*environment*}.json` must contain the object:
+```
+{
+   "BaseSwaggerSettings":{
+      "ApiExplorer":{
+         "GroupNameFormat":"V.v",
+         "SubstitutionFormat":"V.v"
+      },
+      "Description":"rBR Scraper - Logo",
+      "DocumentName":"rBR Scraper - Web API",
+      "GenerateExamples":true,
+      "GenerateXmlObjects":true,
+      "OpenApiSecurityScheme":{
+         "Description":"JWT authorization header using the Bearer schema. Type 'Bearer' [space] and then your token in the text input below. Example: Bearer {token}",
+         "Name":"Authorization"
+      },
+      "Title":"rBR Scraper - Development",
+      "UseControllerSummaryAsTagDescription":true,
+      "UseRouteNameAsOperationId":false,
+      "UseXmlDocumentation":true
+   }
+}
+```
+
+### APIFY System Connection Settings:
+
+The file `appsettings.{*environment*}.json` must contain the object:
+```
+{
+   "ApiFySettings":{
+      "AccessToken":"apify_api_NEF0KDgXWsMDq6O6CMs3FzMurUhVij1NhxMR",
+      "UrlBase":"https://api.apify.com/v2",
+      "EndpointListActors":"/acts",
+      "EndpointGetActor":"/acts/{0}",
+      "EndpointListRuns":"/acts/{0}/runs",
+      "EndpointGetDatasetItems":"/datasets/{0}/items?format=json&skipEmpty=true&skipHidden=true"
+   }
+}
+```
+
+### Active APIFY Scrapers Settings:
+```
+{
+   "ScraperSettings":{
+      "ActiveConfiguredScrapers":[
+         "shu8hvrXbJbY3Eb9W",
+         "dSCLg0C3YEZ83HzYX"
+      ]
+   }
+}
+```
+
+## Features
 
 1. **Admin - Instagram Datasets**:
-> * <u>GET - /API/v1.0/Admin/InstagramDataset</u>: _listagem de Instagram Scraper Datasets importados;_
-> * <u>POST - /API/v1.0/Admin/InstagramDataset/{datasetDataId}</u>: _importação de um único Instagram Scraper Dataset;_
-> * <u>POST - /API/v1.0/Admin/InstagramDataset/ImportAll/{scraperId}</u>: _importação de todos os Datasets de um único Scraper;_
-> * <u>GET - /API/v1.0/Admin/InstagramDataset/ImportAll/{scraperId}</u>: _listagem de Datasets por Run._
+> * <u>GET - /API/v1.0/Admin/InstagramDataset</u>: _listing of imported Instagram Scraper Datasets;_
+> * <u>POST - /API/v1.0/Admin/InstagramDataset/{datasetDataId}</u>: _import of a single Instagram Scraper Dataset;_
+> * <u>POST - /API/v1.0/Admin/InstagramDataset/ImportAll/{scraperId}</u>: _import of all Datasets from a single Scraper;_
+> * <u>GET - /API/v1.0/Admin/InstagramDataset/ImportAll/{scraperId}</u>: _listing of Datasets by Run._
 
 2. **Admin - Instagram Profile Datasets**:
-> * <u>GET - /API/v1.0/Admin/InstagramProfileDataset</u>: _listagem de Instagram Profile Scraper Datasets importados;_
-> * <u>POST -/API/v1.0/Admin/InstagramProfileDataset/{datasetDataId}</u>: _importação de um único Instagram Profile Scraper Dataset;_
-> * <u>POST - /API/v1.0/Admin/InstagramProfileDataset/ImportAll/{scraperId}</u>: _importação de todos os Datasets de um único Scraper;_
-> * <u>GET - /API/v1.0/Admin/InstagramProfileDataset/ListByRun</u>: _listagem de Datasets por Run._
+> * <u>GET - /API/v1.0/Admin/InstagramProfileDataset</u>: _listing of imported Instagram Profile Scraper Datasets;_
+> * <u>POST -/API/v1.0/Admin/InstagramProfileDataset/{datasetDataId}</u>: _import of a single Instagram Profile Scraper Dataset;_
+> * <u>POST - /API/v1.0/Admin/InstagramProfileDataset/ImportAll/{scraperId}</u>: _import of all Datasets from a single Scraper;_
+> * <u>GET - /API/v1.0/Admin/InstagramProfileDataset/ListByRun</u>: _listing of Datasets by Run._
 
 3. **Admin - Runs**:
-> * <u>POST - /API/v1.0/Admin/Run</u>: _criação de uma lista de Scraper Runs_;
-> * <u>GET - /API/v1.0/Admin/Run</u>: _listagem de Scraper Runs já criadas/importadas_;
-> * <u>GET - /API/v1.0/Admin/Run/{id}</u>: _obtenção de uma única Run por Id_;
-> * <u>GET - /API/v1.0/Admin/Run/ListFromApiFy</u>: _listagem de Runs do APIFY, filtradas por Scraper_.
+> * <u>POST - /API/v1.0/Admin/Run</u>: _creation of a list of Scraper Runs;_
+> * <u>GET - /API/v1.0/Admin/Run</u>: _listing of Scraper Runs already created/imported;_
+> * <u>GET - /API/v1.0/Admin/Run/{id}</u>: _retrieval of a single Run by Id;_
+> * <u>GET - /API/v1.0/Admin/Run/ListFromApiFy</u>: _listing of APIFY Runs, filtered by Scraper._
 
 4. **Admin - Scrapers**:
-> * <u>POST - /API/v1.0/Admin/Scraper</u>: _criação de uma lista de Scrapers_;
-> * <u>GET - /API/v1.0/Admin/Scraper</u>: _listagem de Scrapers já criados/importados_;
-> * <u>GET - /API/v1.0/Admin/Scraper/{id}</u>: _obtenção de um único Scraper por Id_;
-> * <u>GET - /API/v1.0/Admin/Scraper/GetFromApiFy/{id}</u>: _obtenção de um único Scraper do APIFY_;
-> * <u>GET - /API/v1.0/Admin/Scraper/ListFromApiFy</u>: _listagem de Scrapers do APIFY_.
+> * <u>POST - /API/v1.0/Admin/Scraper</u>: _creation of a list of Scrapers;_
+> * <u>GET - /API/v1.0/Admin/Scraper</u>: _listing of Scrapers already created/imported;_
+> * <u>GET - /API/v1.0/Admin/Scraper/{id}</u>: _retrieval of a single Scraper by Id;_
+> * <u>GET - /API/v1.0/Admin/Scraper/GetFromApiFy/{id}</u>: _retrieval of a single Scraper from APIFY;_
+> * <u>GET - /API/v1.0/Admin/Scraper/ListFromApiFy</u>: _listing of APIFY Scrapers._
 
-## Estrutura de dados - MySQL Maria DB
+## Data Structure - MySQL MariaDB
 
-1.	**CommonScrapers**
+1. **CommonScrapers**
 
-    |Nome|Anulável|Tipo|Precisão|Chave|
+    |Name|Nullable|Type|Precision|Key|
     |--|--|--|--|--|
-    |Id|	Não|	varchar(36)|	-|	PRI|
-    |Created|	Não|	varchar(33)|	-|	-|
-    |Modified|	Sim|	varchar(33)|	-|	-|
-    |Removed|	Sim|	varchar(33)|	-|	-|
-    |Status|	Não|	int(11)|	10|	-|
-    |DataId|	Não|	varchar(50)|	-|	UNI|
-    |Title|	Não|	varchar(100)|	-|	-|
-    |Description|	Não|	text|	-|	-|
-    |Name|	Não|	varchar(100)|	-|	-|
-    |CreatedAt|	Não|	varchar(33)|	-|	-|
-    |ModifiedAt|	Sim|	varchar(33)|	-|	-|
+    |Id|	No|	varchar(36)|	-|	PRI|
+    |Created|	No|	varchar(33)|	-|	-|
+    |Modified|	Yes|	varchar(33)|	-|	-|
+    |Removed|	Yes|	varchar(33)|	-|	-|
+    |Status|	No|	int(11)|	10|	-|
+    |DataId|	No|	varchar(50)|	-|	UNI|
+    |Title|	No|	varchar(100)|	-|	-|
+    |Description|	No|	text|	-|	-|
+    |Name|	No|	varchar(100)|	-|	-|
+    |CreatedAt|	No|	varchar(33)|	-|	-|
+    |ModifiedAt|	Yes|	varchar(33)|	-|	-|
 
 ---
 
 2. **InstagramProfileScraperDatasets**
 
-    |Nome|Anulável|Tipo|Precisão|Chave|
+    |Name|Nullable|Type|Precision|Key|
     |--|--|--|--|--|
-    |Id|	Não|	varchar(36)|	-|	PRI|
-    |Created|	Não|	varchar(33)|	-|	-|
-    |Modified|	Sim|	varchar(33)|	-|	-|
-    |Removed|	Sim|	varchar(33)|	-|	-|
-    |Status|	Não|	int(11)|	10|	-|
-    |DataId|	Não|	varchar(50)|	-|	-|
-    |Url|	Não|	varchar(300)|	-|	-|
-    |InputUrl|	Não|	varchar(300)|	-|	-|
-    |UserName|	Não|	varchar(150)|	-|	MUL|
-    |FullName|	Não|	varchar(150)|	-|	-|
-    |FollowersCount|	Sim|	int(11)|	10|	-|
-    |Verified|	Sim|	bit(1)|	1|	-|
-    |Timestamp|	Não|	varchar(33)|	-|	-|
-    |RunId|	Não|	varchar(36)|	-|	MUL|
-    |FullObject|	Não|	longtext|	-|	-|
+    |Id|	No|	varchar(36)|	-|	PRI|
+    |Created|	No|	varchar(33)|	-|	-|
+    |Modified|	Yes|	varchar(33)|	-|	-|
+    |Removed|	Yes|	varchar(33)|	-|	-|
+    |Status|	No|	int(11)|	10|	-|
+    |DataId|	No|	varchar(50)|	-|	-|
+    |Url|	No|	varchar(300)|	-|	-|
+    |InputUrl|	No|	varchar(300)|	-|	-|
+    |UserName|	No|	varchar(150)|	-|	MUL|
+    |FullName|	No|	varchar(150)|	-|	-|
+    |FollowersCount|	Yes|	int(11)|	10|	-|
+    |Verified|	Yes|	bit(1)|	1|	-|
+    |Timestamp|	No|	varchar(33)|	-|	-|
+    |RunId|	No|	varchar(36)|	-|	MUL|
+    |FullObject|	No|	longtext|	-|	-|
     ```mermaid
     graph LR
     A(InstagramProfileScraperDatasets) === FK_RunId  ==> B(ScrapersRuns)
-    ```
 ---
 
 3. **InstagramScraperDatasets**
 
-    |Nome|Anulável|Tipo|Precisão|Chave|
+    |Name|Nullable|Type|Precision|Key|
     |--|--|--|--|--|
-    |Id|	Não|	varchar(36)|	-|	PRI|
-    |Created|	Não|	varchar(33)|	-|	-|
-    |Modified|	Sim|	varchar(33)|	-|	-|
-    |Removed|	Sim|	varchar(33)|	-|	-|
-    |Status|	Não|	int(11)|	10|	-|
-    |DataId|	Não|	varchar(50)|	-|	-|
-    |Url|	Não|	varchar(300)|	-|	-|
-    |InputUrl|	Não|	varchar(300)|	-|	-|
-    |Timestamp|	Não|	varchar(33)|	-|	-|
-    |RunId|	Não|	varchar(36)|	-|	MUL|
-    |InstagramProfileId|	Não|	varchar(36)|	-|	MUL|
-    |FullObject|	Não|	longtext|	-|	-|
+    |Id|	No|	varchar(36)|	-|	PRI|
+    |Created|	No|	varchar(33)|	-|	-|
+    |Modified|	Yes|	varchar(33)|	-|	-|
+    |Removed|	Yes|	varchar(33)|	-|	-|
+    |Status|	No|	int(11)|	10|	-|
+    |DataId|	No|	varchar(50)|	-|	-|
+    |Url|	No|	varchar(300)|	-|	-|
+    |InputUrl|	No|	varchar(300)|	-|	-|
+    |Timestamp|	No|	varchar(33)|	-|	-|
+    |RunId|	No|	varchar(36)|	-|	MUL|
+    |InstagramProfileId|	No|	varchar(36)|	-|	MUL|
+    |FullObject|	No|	longtext|	-|	-|
     ```mermaid
     graph LR
     A(InstagramScraperDatasets) === FK_RunId  ==> B(ScrapersRuns)
@@ -405,97 +421,92 @@ O arquivo appsettings.{*environment*}.json deve conter o objeto:
 
 4. **ScrapersRuns**
 
-    |Nome|Anulável|Tipo|Precisão|Chave|
+    |Name|Nullable|Type|Precision|Key|
     |--|--|--|--|--|
-    |Id|	Não|	varchar(36)|	-|	PRI|
-    |Created|	Não|	varchar(33)|	-|	-|
-    |Modified|	Sim|	varchar(33)|	-|	-|
-    |Removed|	Sim|	varchar(33)|	-|	-|
-    |Status|	Não|	int(11)|	10|	-|
-    |DataId|	Não|	varchar(50)|	-|	MUL|
-    |DataStatus|	Não|	varchar(50)|	-|	-|
-    |DatasetId|	Não|	varchar(50)|	-|	-|
-    |StartedAt|	Não|	varchar(33)|	-|	-|
-    |FinishedAt|	Não|	varchar(33)|	-|	-|
-    |Imported|	Não|	bit(1)|	1|	-|
-    |ImportingError|	Sim|	text|	-|	-|
-    |ScraperId|	Não|	varchar(36)|	-|	MUL|
+    |Id|	No|	varchar(36)|	-|	PRI|
+    |Created|	No|	varchar(33)|	-|	-|
+    |Modified|	Yes|	varchar(33)|	-|	-|
+    |Removed|	Yes|	varchar(33)|	-|	-|
+    |Status|	No|	int(11)|	10|	-|
+    |DataId|	No|	varchar(50)|	-|	MUL|
+    |DataStatus|	No|	varchar(50)|	-|	-|
+    |DatasetId|	No|	varchar(50)|	-|	-|
+    |StartedAt|	No|	varchar(33)|	-|	-|
+    |FinishedAt|	No|	varchar(33)|	-|	-|
+    |Imported|	No|	bit(1)|	1|	-|
+    |ImportingError|	Yes|	text|	-|	-|
+    |ScraperId|	No|	varchar(36)|	-|	MUL|
     ```mermaid
     graph LR
     A(ScrapersRuns) === FK_ScraperId  ==> B(CommonScrapers)
-    ```	
-	
+    ```
 
-## Ambiente local e execução
+## Local Environment and Execution
 
- 1. **Requisitos**
+1. **Requirements**
 
- - Banco de dados - My SQL Maria DB v. 10.5.9 (pode ser obtido no link [Download Maria DB](https://mariadb.org/download/?t=mariadb&p=mariadb&r=11.3.0)), e
- - Runtime do .NET Core 8.0 instalado (pode ser obtido no link [Download do .NET](https://dotnet.microsoft.com/en-us/download/dotnet)).
+   - Database - MySQL MariaDB v. 10.5.9 (can be obtained from the link [Download MariaDB](https://mariadb.org/download/?t=mariadb&p=mariadb&r=11.3.0)), and
+   - .NET 8.0 Runtime installed (can be obtained from the link [Download .NET](https://dotnet.microsoft.com/en-us/download/dotnet)).
 
- 2. **Configurações locais**
+2. **Local Configuration**
 
-	> No presente momento da aplicação, a única configuração local a ser
-	> feita é a de conexão com o banco de dados local.
-	
- - Navegue até o arquivo **appsettings.json**, abra-o com algum editor de texto e altere a propriedade **ContextSettings.ConnectionStrings[0].ConnectionString**, preenchendo seu valor com as suas credenciais locais de conexão ao seu banco de dados:
+   > At the current stage of the application, the only local configuration that needs to be done is the connection to the local database.
+
+   - Navigate to the **appsettings.json** file, open it with any text editor, and modify the property **ContextSettings.ConnectionStrings[0].ConnectionString**, filling it with your local database connection credentials:
 	```
 	{
-		"BaseContextSettings": {
-			"ConnectionStrings": [
-				{
-				"ConnectionStringMySQL": "server=127.0.0.1;port=3306;database=rBRScraper_Development;uid={seu_usuário};password={sua_senha}",
-				"ConnectionStringSQLServer": "Data Source={sua_instância}; Initial Catalog=rBRScraper_Development; Integrated Security=False; User Id={seu_usuário}; Password={sua_senha}; TrustServerCertificate=true",
-				"ContextName": "rBRScraperContext",
-				"DatabaseType": 0
-				}
-			]
-		}
+	   "BaseContextSettings":{
+	      "ConnectionStrings":[
+	         {
+	            "ConnectionStringMySQL":"server=127.0.0.1;port=3306;database=rBRScraper_Development;uid={seu_usuário};password={sua_senha}",
+	            "ConnectionStringSQLServer":"Data Source={sua_instância}; Initial Catalog=rBRScraper_Development; Integrated Security=False; User Id={seu_usuário}; Password={sua_senha}; TrustServerCertificate=true",
+	            "ContextName":"rBRScraperContext",
+	            "DatabaseType":0
+	         }
+	      ]
+	   }
 	}
 	```
- 3. **Execução local**
+ 
+3. **Local Execution**
 
-	>As instruções dadas são válidas para:
-	> - Windows PowerShell;
-	> - Developer PowerShell  for VS 2022 (dentro ou fora da IDE do VS 2022), e
-	> - Windows Command Prompt,
-	> 
-	>e devem ser executas na ordem dada.
+> The instructions provided are valid for:
+> - Windows PowerShell;
+> - Developer PowerShell for VS 2022 (inside or outside the VS 2022 IDE), and
+> - Windows Command Prompt,
+>
+> and must be executed in the order presented.
 
-- Dentro do prompt de comando escolhido, execute o comando seguinte para verificar se o runtime do .NET está disponível:
+- In the chosen command prompt, run the following command to verify that the .NET runtime is available:
 
-		dotnet --info
-		
-	O resultado do comando deve iniciar com informações similares a:
+`dotnet --info`
 
-		.NET SDK:
-			Version:           9.0.201
-			Commit:            071aaccdc2
-			Workload version:  9.0.200-manifests.a3a1a094
-			MSBuild version:   17.13.13+1c2026462
+The command output should begin with information similar to:
+```
+.NET SDK:
+Version:           9.0.201
+Commit:            071aaccdc2
+Workload version:  9.0.200-manifests.a3a1a094
+MSBuild version:   17.13.13+1c2026462
+Runtime Environment:
+OS Name:     Windows
+OS Version:  10.0.19045
+OS Platform: Windows
+RID:         win-x64
+Base Path:   C:\Program Files\dotnet\sdk\9.0.201\
+Host:
+Version:      9.0.3
+Architecture: x64
+Commit:       831d23e561
+.NET SDKs installed:
+9.0.201 [C:\Program Files\dotnet\sdk]
+```
+- In the chosen command prompt, navigate to the project root folder where the solution file `*.sln` is located. After navigating, list the directory contents and confirm you are in the correct location before proceeding:
 
-		Runtime Environment:
-			OS Name:     Windows
-			OS Version:  10.0.19045
-			OS Platform: Windows
-			RID:         win-x64
-			Base Path:   C:\Program Files\dotnet\sdk\9.0.201\
+`cd {project_root_directory}`
+`dir`
 
-		Host:
-			Version:      9.0.3
-			Architecture: x64
-			Commit:       831d23e561
-
-		.NET SDKs installed:
-			9.0.201 [C:\Program Files\dotnet\sdk]
-  
-- Dentro do prompt de comando escolhido, navegue até a pasta raiz do projeto, onde se localiza o arquivo de solução do mesmo `*.sln`. Após navegar, liste os itens presentes no diretório e verifique se está no local correto antes de continuar:
-
-		cd {diretório raiz do projeto}
-		dir
-	
-	O resultado da listagem (comando: `dir`) deverá exibir algo como:
-
+The `dir` command output should look something like:
 		Mode                 LastWriteTime         Length Name
 		----                 -------------         ------ ----
 		d-----          5/6/2025  10:26 AM                rBR.BaseLibraries
@@ -507,26 +518,28 @@ O arquivo appsettings.{*environment*}.json deve conter o objeto:
 		d-----          5/6/2025  11:52 AM                rBR.Scraper.Service
 		-a----          5/2/2025  12:40 PM           5477 rBR.Scraper.sln
 
-- Para garantir que todas as dependências necessárias estão disponíveis, limpe o projeto e restaure as dependências, executando os 02 comandos seguintes:
+- To ensure all necessary dependencies are available, clean the project and restore dependencies by running the following two commands:
+```
+dotnet clean
+dotnet restore
+```
 
-	    dotnet clean
-	    dotnet restore
+- After executing these operations, verify that the application can be built without errors by running:
+`dotnet build`
 
-- Após a execução destas operações, bastará certificar-se de que a aplicação está possível de ser compilada sem erros. Para isso, execute o comando:
+The expected output is:
+	Build succeeded.
+	0 Warning(s)
+	0 Error(s)
 
-		dotnet build
 
-	O resultado deve exibir:
+- After these steps, the final action is to run the application. Once started, it will be available at the address specified in the **launchSettings.json** file. To start the application, navigate to the folder containing the API service project `{*.Service.csproj}`. In that folder, run the application by passing the project file name as an argument. Assuming you are still in the project root folder, execute:
+```
+cd src\rBR.Analytics.Service
+dotnet run --project rBR.Analytics.Service.csproj
+```
 
-		Build succeeded.
-			0 Warning(s)
-			0 Error(s)
+Visit the application’s execution address and confirm it is working as expected:
+`https://localhost:5002/swagger/index.html`
 
-- Após a execução destas operações, restará executar a aplicação. Após o início da execução, o mesmo já estará disponível no endereço determinado no arquivo **launchSettings.json**. Para iniciar a aplicação, navegue até a pasta que contém o projeto de serviço de API `{*.Service.csproj}`. Nesta pasta, execute a aplicação passando o nome do arquivo de projeto como parâmetro/argumento. Considerando que ainda "estamos" na pasta raiz do projeto, siga os comandos:
-
-		cd src\rBR.Analytics.Service
-		dotnet run --project rBR.Analytics.Service.csproj
-		
-	Visite o endereço de execução da aplicação e certifique-se de que a mesma funciona como esperado:
-	https://localhost:5002/swagger/index.html
-	para encerrar a execução da aplicação, basta executar o comando `Ctrl+C` no prompt de comando usado.
+To stop the application, simply press `Ctrl+C` in the command prompt you are using.
