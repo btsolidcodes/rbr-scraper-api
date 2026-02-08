@@ -1,6 +1,6 @@
 # Relatório Brasil - Sistema Web: rBR Scraper .NET API
 
-[Logo](https://github.com/btsolidcodes/rbr-scraper-api/blob/main/rBR.Scraper/rBR.Scraper.Service/wwwroot/Image/01.png)
+![Logo](https://github.com/btsolidcodes/rbr-scraper-api/blob/main/rBR.Scraper/rBR.Scraper.Service/wwwroot/Image/01.png)
 
 **Serviço Web (API) de ferramentas de importação de dados de redes sociais .NET API.**
 
