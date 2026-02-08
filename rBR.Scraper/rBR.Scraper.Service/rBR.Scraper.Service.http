@@ -1,0 +1,6 @@
+@rBR.Scraper.Service_HostAddress = http://localhost:5172
+
+GET {{rBR.Scraper.Service_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFramework>net8.0</TargetFramework>
+	  <Nullable>disable</Nullable>
+	  <ImplicitUsings>disable</ImplicitUsings>
+	  <GenerateDocumentationFile>True</GenerateDocumentationFile>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="FluentValidation" Version="11.11.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="8.0.15" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.15" />
+		<PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.1" />
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.1" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\rBR.Scraper.Application\rBR.Scraper.Application.csproj" />
+	  <ProjectReference Include="..\rBR.Scraper.Data.External\rBR.Scraper.Data.External.csproj" />
+	  <ProjectReference Include="..\rBR.Scraper.Data.Internal\rBR.Scraper.Data.Internal.csproj" />
+	  <ProjectReference Include="..\rBR.Scraper.Domain\rBR.Scraper.Domain.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+    <Reference Include="rBR.BaseLibraries.Application">
+      <HintPath>..\rBR.BaseLibraries\rBR.BaseLibraries.Application.dll</HintPath>
+    </Reference>
+    <Reference Include="rBR.BaseLibraries.Data.External">
+      <HintPath>..\rBR.BaseLibraries\rBR.BaseLibraries.Data.External.dll</HintPath>
+    </Reference>
+    <Reference Include="rBR.BaseLibraries.Data.Internal">
+      <HintPath>..\rBR.BaseLibraries\rBR.BaseLibraries.Data.Internal.dll</HintPath>
+    </Reference>
+    <Reference Include="rBR.BaseLibraries.Domain">
+      <HintPath>..\rBR.BaseLibraries\rBR.BaseLibraries.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="rBR.BaseLibraries.Infrastructure">
+      <HintPath>..\rBR.BaseLibraries\rBR.BaseLibraries.Infrastructure.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFramework>net8.0</TargetFramework>
+	  <Nullable>disable</Nullable>
+	  <ImplicitUsings>disable</ImplicitUsings>
+	  <GenerateDocumentationFile>True</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\rBR.Scraper.Domain\rBR.Scraper.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="rBR.BaseLibraries.Data.External">
+      <HintPath>..\rBR.BaseLibraries\rBR.BaseLibraries.Data.External.dll</HintPath>
+    </Reference>
+    <Reference Include="rBR.BaseLibraries.Data.Internal">
+      <HintPath>..\rBR.BaseLibraries\rBR.BaseLibraries.Data.Internal.dll</HintPath>
+    </Reference>
+    <Reference Include="rBR.BaseLibraries.Domain">
+      <HintPath>..\rBR.BaseLibraries\rBR.BaseLibraries.Domain.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

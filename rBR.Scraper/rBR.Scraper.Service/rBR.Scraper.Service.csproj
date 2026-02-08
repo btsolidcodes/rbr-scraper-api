@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+	  <TargetFramework>net8.0</TargetFramework>
+	  <Nullable>disable</Nullable>
+	  <ImplicitUsings>disable</ImplicitUsings>
+	  <GenerateDocumentationFile>True</GenerateDocumentationFile>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="8.1.0" />
+		<PackageReference Include="FluentValidation" Version="11.11.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.15" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="8.0.15" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.15">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="NSwag.AspNetCore" Version="14.3.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+    <ProjectReference Include="..\rBR.Scraper.Application\rBR.Scraper.Application.csproj" />
+    <ProjectReference Include="..\rBR.Scraper.Infrastructure\rBR.Scraper.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="rBR.BaseLibraries.Application">
+      <HintPath>..\rBR.BaseLibraries\rBR.BaseLibraries.Application.dll</HintPath>
+    </Reference>
+    <Reference Include="rBR.BaseLibraries.Service">
+      <HintPath>..\rBR.BaseLibraries\rBR.BaseLibraries.Service.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

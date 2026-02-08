@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>rBR.BaseLibraries.Infrastructure</name>
+    </assembly>
+    <members>
+        <member name="T:rBR.BaseLibraries.Infrastructure.Common.BaseLazy`1">
+            <summary>
+            The base class for accessing/implementing lazy initialization of injected interfaces.
+            </summary>
+        </member>
+        <member name="M:rBR.BaseLibraries.Infrastructure.Common.BaseLazy`1.#ctor(System.IServiceProvider)">
+            <summary>
+            The <see cref="T:rBR.BaseLibraries.Infrastructure.Common.BaseLazy`1"/> constructor that resolves to the object being initialized in Lazy mode.
+            </summary>
+            <param name="serviceProvider">The <see cref="T:System.IServiceProvider"/> interface surface of services for distributed access across other services/classes.</param>
+        </member>
+        <member name="T:rBR.BaseLibraries.Infrastructure.Initialization.BaseDatabaseInitialization">
+            <summary>
+            The static class for running the database's initialization configurations and processes.
+            </summary>
+        </member>
+        <member name="M:rBR.BaseLibraries.Infrastructure.Initialization.BaseDatabaseInitialization.RegisterContext``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.String)">
+            <summary>
+            The static method for registering the application's contexts.
+            </summary>
+            <typeparam name="TContext"> The context class type.</typeparam>
+            <param name="serviceCollection">The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> interface surface of registered services for distributed access across other services/classes.</param>
+            <param name="contextName">The name of the current context.</param>
+        </member>
+        <member name="M:rBR.BaseLibraries.Infrastructure.Initialization.BaseDatabaseInitialization.MigrateContext``1(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            The static method that checks and runs the databases' migrations.
+            </summary>
+            <param name="applicationBuilder">The <see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/> interface surface of the application builder for distributed access across other services/classes.</param>
+        </member>
+        <member name="T:rBR.BaseLibraries.Infrastructure.IoC.BaseNativeInjector">
+            <summary>
+            The static class for registering the services, contexts, and settings that the application will access via Dependency Injection.
+            </summary>
+        </member>
+        <member name="M:rBR.BaseLibraries.Infrastructure.IoC.BaseNativeInjector.RegisterSettings(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.Collections.Generic.List{System.Type},Microsoft.Extensions.Hosting.IHostEnvironment,System.String)">
+            <summary>
+            The static method for registering the application's static settings.
+            </summary>
+            <param name="serviceCollection">The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> interface surface of registered services for distributed access across other services/classes.</param>
+            <param name="configuration">The <see cref="T:Microsoft.Extensions.Configuration.IConfiguration"/> interface surface of host settings for distributed access across other services/classes.</param>
+            <param name="types">A <see cref="T:System.Collections.Generic.List`1"/>of <see cref="T:System.Type"/> for the classes that will be registered for the application's settings.</param>
+            <param name="hostEnvironment">A <see cref="T:Microsoft.Extensions.Hosting.IHostEnvironment"/> interface surface for distributed access across other services/classes.</param>
+            <param name="environmentPrefix">A <see cref="T:System.String"/> set for the prefix of the current environment.</param>
+        </member>
+        <member name="M:rBR.BaseLibraries.Infrastructure.IoC.BaseNativeInjector.RegisterCommonCrossCutting(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            The static method for registering the common classes as Cross Cutting IoC.
+            </summary>
+            <param name="serviceCollection">The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> interface surface of registered services for distributed access across other services/classes.</param>
+        </member>
+        <member name="M:rBR.BaseLibraries.Infrastructure.IoC.BaseNativeInjector.RegisterServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Collections.Generic.List{System.Type})">
+            <summary>
+            The static method for registering the application's dependency injection of the services.
+            </summary>
+            <param name="serviceCollection">The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> interface surface of registered services for distributed access across other services/classes.</param>
+            <param name="types">A <see cref="T:System.Collections.Generic.List`1"/>of <see cref="T:System.Type"/> for the classes that will be registered for the application's services.</param>
+        </member>
+    </members>
+</doc>

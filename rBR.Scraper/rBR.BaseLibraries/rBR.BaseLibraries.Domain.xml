@@ -1,0 +1,1266 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>rBR.BaseLibraries.Domain</name>
+    </assembly>
+    <members>
+        <member name="T:rBR.BaseLibraries.Domain.Entity.BaseCommon">
+            <summary>
+            The class that represents all common data of application objects (id, status, created, edited, deleted, etc.).
+            </summary>
+        </member>
+        <member name="M:rBR.BaseLibraries.Domain.Entity.BaseCommon.#ctor(System.Boolean,System.Boolean)">
+            <summary>
+            The <see cref="T:rBR.BaseLibraries.Domain.Entity.BaseCommon"/>'s constructor for the creation of new objects.
+            </summary>
+            <param name="creating">
+            The flag that indicates whether a new object is being created:
+            <list type="bullet">
+            <item>
+            <description><see langword="True"/> if a new object is being created, and</description>
+            </item>
+            <item>
+            <description><see langword="False"/> if an existing object is being referenced.</description>
+            </item>
+            </list>
+            </param>
+            <param name="editing">
+            The flag that indicates whether a new object is being updated:
+            <list type="bullet">
+            <item>
+            <description><see langword="True"/> if a new object is being updated, and</description>
+            </item>
+            <item>
+            <description><see langword="False"/> if an existing object is being referenced.</description>
+            </item>
+            </list>
+            </param>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.BaseCommon.Id">
+            <summary>
+            The objects global unique identifier.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.BaseCommon.Status">
+            <summary>
+            The status of the objects.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.BaseCommon.Created">
+            <summary>
+            The date and time when the objects were created.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.BaseCommon.Modified">
+            <summary>
+            The date and time when the objects were last modified.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.BaseCommon.Removed">
+            <summary>
+            The date and time when the objects were removed.
+            </summary>
+        </member>
+        <member name="T:rBR.BaseLibraries.Domain.Entity.CommonScraper">
+            <summary>
+            The class representing the application's scrapers.
+            </summary>
+        </member>
+        <member name="M:rBR.BaseLibraries.Domain.Entity.CommonScraper.#ctor">
+            <summary>
+            The <see cref="T:rBR.BaseLibraries.Domain.Entity.CommonScraper"/>'s default/empty constructor.
+            </summary>
+        </member>
+        <member name="M:rBR.BaseLibraries.Domain.Entity.CommonScraper.#ctor(System.String,System.String,System.String,System.String,System.DateTimeOffset,System.Nullable{System.DateTimeOffset})">
+            <summary>
+            The <see cref="T:rBR.BaseLibraries.Domain.Entity.CommonScraper"/>'s constructor for creating an <see cref="T:rBR.BaseLibraries.Domain.Entity.CommonScraper"/> object.
+            </summary>
+            <param name="dataId">The scraper's data id.</param>
+            <param name="title">The scraper's title.</param>
+            <param name="description">The scraper's description.</param>
+            <param name="name">The scraper's name.</param>
+            <param name="createdAt">The date and time when the scraper was created.</param>
+            <param name="modifiedAt">The date and time when the scraper was modified.</param>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.CommonScraper.DataId">
+            <summary>
+            The scraper's APIFY internal id.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.CommonScraper.Title">
+            <summary>
+            The actor's (version of the scraper) title.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.CommonScraper.Description">
+            <summary>
+            The scraper's description.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.CommonScraper.Name">
+            <summary>
+            The scraper's default name.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.CommonScraper.CreatedAt">
+            <summary>
+            The date and time when the actor was created in APIFY.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.CommonScraper.ModifiedAt">
+            <summary>
+            The date and time when the actor was modified in APIFY.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.CommonScraper.Runs">
+            <summary>
+            The navigation property of the Runs that this Scraper owns.
+            </summary>
+        </member>
+        <member name="T:rBR.BaseLibraries.Domain.Entity.InstagramProfileScraperDataset">
+            <summary>
+            The class that represents Instagram Profile scraped data.
+            </summary>
+        </member>
+        <member name="M:rBR.BaseLibraries.Domain.Entity.InstagramProfileScraperDataset.#ctor">
+            <summary>
+            The <see cref="T:rBR.BaseLibraries.Domain.Entity.InstagramProfileScraperDataset"/>'s default/empty constructor.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileScraperDataset.DataId">
+            <summary>
+            The int?ernal id of the data collected by the scraper.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileScraperDataset.InputUrl">
+            <summary>
+            The URL of the page that was monitored by the scraper.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileScraperDataset.Url">
+            <summary>
+            The URL of the object that was collected by the scrapper.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileScraperDataset.UserName">
+            <summary>
+            The user name of the account that owns the profile.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileScraperDataset.FullName">
+            <summary>
+            The full name of the profile's account.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileScraperDataset.FollowersCount">
+            <summary>
+            The amount of followers of the profile.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileScraperDataset.Verified">
+            <summary>
+            The flag indicating if the profile account is verified.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileScraperDataset.Timestamp">
+            <summary>
+            The date and time when the profile information was collected.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileScraperDataset.FullObjectData">
+            <summary>
+            The string object that contains the full data of the scraped object.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileScraperDataset.FullObjectStructured">
+            <summary>
+            The structured object that contains the full data of the scraped object.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileScraperDataset.RunId">
+            <summary>
+            The id of the Run that owns this Instagram Scraper Dataset.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileScraperDataset.Run">
+            <summary>
+            The navigation property of the Scraper Run that owns this Instagram Scraper Dataset.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileScraperDataset.InstagramPosts">
+            <summary>
+            The navigation property of the Instagram Posts that this Instagram Profile owns.
+            </summary>
+        </member>
+        <member name="T:rBR.BaseLibraries.Domain.Entity.InstagramProfileFullObject">
+            <summary>
+            The class that gathers the complete data of the Instagram Profile scraped objects.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileFullObject.Biography">
+            <summary>
+            The profile's biography.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileFullObject.BusinessCategoryName">
+            <summary>
+            The name of the business category of the profile.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileFullObject.DataId">
+            <summary>
+            The int?ernal id of the data collected by the scraper.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileFullObject.ExternalUrl">
+            <summary>
+            The value of the single external URL linked to the profile.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileFullObject.ExternalUrls">
+            <summary>
+            The profile's external URLs.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileFullObject.ExternalUrlShimmed">
+            <summary>
+            The value of the lynx URL linked to the profile.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileFullObject.FbId">
+            <summary>
+            The profile Facebook Id.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileFullObject.FollowersCount">
+            <summary>
+            The amount of followers of the profile.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileFullObject.FollowsCount">
+            <summary>
+            The number of follows the profile has.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileFullObject.FullName">
+            <summary>
+            The full name of the profile's account.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileFullObject.HasChannel">
+            <summary>
+            The flag indicating if the profile owns a channel.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileFullObject.HighlightReelCount">
+            <summary>
+            The amount of reel's highlights.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileFullObject.InputUrl">
+            <summary>
+            The URL of the page that was monitored by the scraper.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileFullObject.IsBusinessAccount">
+            <summary>
+            The flag indicating if the profile account is a business account.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileFullObject.JoinedRecently">
+            <summary>
+            The flag indicating if the owner of the profile has joined Instagram recently.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileFullObject.IgTvVideoCount">
+            <summary>
+            The amount of views of the Instagram TV for this profile.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileFullObject.IsPrivate">
+            <summary>
+            The flag indicating if the profile is a private profile.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileFullObject.LatestIgTvVideos">
+            <summary>
+            The lastest Instagram TV videos of the profile.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileFullObject.LatestPosts">
+            <summary>
+            The profile's latest posts.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileFullObject.ProfilePicUrl">
+            <summary>
+            The URL of the profile picture.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileFullObject.ProfilePicUrlHD">
+            <summary>
+            The URL of the profile picture in high-definition.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileFullObject.RelatedProfiles">
+            <summary>
+            The list of profiles that are related to the profile.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileFullObject.Url">
+            <summary>
+            The URL of the object that was collected by the scrapper.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileFullObject.UserName">
+            <summary>
+            The user name of the account that owns the profile.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileFullObject.Verified">
+            <summary>
+            The flag indicating if the profile is verified.
+            </summary>
+        </member>
+        <member name="T:rBR.BaseLibraries.Domain.Entity.InstagramProfileExternalUrl">
+            <summary>
+            The class that gathers the external urls related to a Instagram Profile.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileExternalUrl.Title">
+            <summary>
+            The title of the URL.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileExternalUrl.LynxUrl">
+            <summary>
+            The Instagram linked URL.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileExternalUrl.Url">
+            <summary>
+            The URL value.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileExternalUrl.LinkType">
+            <summary>
+            The description of the link type.
+            </summary>
+        </member>
+        <member name="T:rBR.BaseLibraries.Domain.Entity.InstagramProfileRelatedProfile">
+            <summary>
+            The class that gathers the properties of a Instagram Profile Related Profile.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileRelatedProfile.DataId">
+            <summary>
+            The int?ernal id of the data collected by the scraper.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileRelatedProfile.FullName">
+            <summary>
+            The full name of the profile's account.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileRelatedProfile.IsPrivate">
+            <summary>
+            The flag indicating if the profile is a private profile.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileRelatedProfile.ProfilePicUrl">
+            <summary>
+            The URL of the profile picture.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileRelatedProfile.UserName">
+            <summary>
+            The user name of the account that owns the profile.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileRelatedProfile.Verified">
+            <summary>
+            The flag indicating if the profile is verified.
+            </summary>
+        </member>
+        <member name="T:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestIgTvVideo">
+            <summary>
+            The class that gathers the properties of the Latest Instagram TV Video of the profile.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestIgTvVideo.Alt">
+            <summary>
+            The alternative text for the video.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestIgTvVideo.Caption">
+            <summary>
+            The caption of the video.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestIgTvVideo.CommentsCount">
+            <summary>
+            The amount of comments of the video.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestIgTvVideo.CommentsDisabled">
+            <summary>
+            The flag indicating if the comments are disabled for the video.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestIgTvVideo.DataId">
+            <summary>
+            The internal id of the video.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestIgTvVideo.DimensionsHeight">
+            <summary>
+            The height dimension of the object.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestIgTvVideo.DimensionsWidth">
+            <summary>
+            The width dimension of the object.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestIgTvVideo.DisplayUrl">
+            <summary>
+            The URL of the image that is displayed for the video.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestIgTvVideo.HashTags">
+            <summary>
+            The video's hashtags.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestIgTvVideo.LikesCount">
+            <summary>
+            The amount of likes of the video.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestIgTvVideo.Mentions">
+            <summary>
+            The video's mentions.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestIgTvVideo.OwnerId">
+            <summary>
+            The id of the owner of the video.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestIgTvVideo.OwnerUserName">
+            <summary>
+            The username of the owner of the video.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestIgTvVideo.ProductType">
+            <summary>
+            The video's product type.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestIgTvVideo.ShortCode">
+            <summary>
+            The int?ernal short-code for the video.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestIgTvVideo.Timestamp">
+            <summary>
+            The date and time when the video was posted.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestIgTvVideo.Title">
+            <summary>
+            The title of the video.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestIgTvVideo.Type">
+            <summary>
+            The type of the media.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestIgTvVideo.Url">
+            <summary>
+            The video's URL.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestIgTvVideo.VideoDuration">
+            <summary>
+            The duration of the video.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestIgTvVideo.VideoUrl">
+            <summary>
+            The video's URL.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestIgTvVideo.VideoViewCount">
+            <summary>
+            The amount of views the video has.
+            </summary>
+        </member>
+        <member name="T:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestPost">
+            <summary>
+            The class that gathers the properties of the Instagram Profile Latest Post.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestPost.Alt">
+            <summary>
+            The alternative text for the post.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestPost.Caption">
+            <summary>
+            The post's caption.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestPost.CommentsCount">
+            <summary>
+            The post's amount of comments.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestPost.DataId">
+            <summary>
+            The internal id of the post.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestPost.DimensionsHeight">
+            <summary>
+            The height dimension of the object.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestPost.DimensionsWidth">
+            <summary>
+            The width dimension of the object.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestPost.DisplayUrl">
+            <summary>
+            The URL of the display image of the post.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestPost.Hashtags">
+            <summary>
+            The post's hashtags.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestPost.Images">
+            <summary>
+            The list of images' URLs of the post.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestPost.LikesCount">
+            <summary>
+            The amount of likes of the post.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestPost.Mentions">
+            <summary>
+            The post's mentions.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestPost.OwnerId">
+            <summary>
+            The id of the owner of the post.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestPost.OnwerUserName">
+            <summary>
+            The post's owner user name.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestPost.ProductType">
+            <summary>
+            The post's product type.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestPost.ShortCode">
+            <summary>
+            The post's short-code.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestPost.Timestamp">
+            <summary>
+            The date and time when the post was posted.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestPost.Type">
+            <summary>
+            The type of the post.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramProfileLatestPost.Url">
+            <summary>
+            The post's URL.
+            </summary>
+        </member>
+        <member name="T:rBR.BaseLibraries.Domain.Entity.InstagramScraperDataset">
+            <summary>
+            The class that represents Instagram scraped data.
+            </summary>
+        </member>
+        <member name="M:rBR.BaseLibraries.Domain.Entity.InstagramScraperDataset.#ctor">
+            <summary>
+            The <see cref="T:rBR.BaseLibraries.Domain.Entity.InstagramScraperDataset"/>'s default/empty constructor.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramScraperDataset.DataId">
+            <summary>
+            The internal id of the data collected by the scraper.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramScraperDataset.Url">
+            <summary>
+            The URL of the object that was collected by the scrapper.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramScraperDataset.InputUrl">
+            <summary>
+            The URL of the page that was monitored by the scraper.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramScraperDataset.Timestamp">
+            <summary>
+            The date and time when the object was posted.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramScraperDataset.FullObjectData">
+            <summary>
+            The string object that contains the full data of the scraped object.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramScraperDataset.FullObjectStructured">
+            <summary>
+            The structured object that contains the full data of the scraped object.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramScraperDataset.RunId">
+            <summary>
+            The id of the Run that owns this Instagram data.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramScraperDataset.InstagramProfileId">
+            <summary>
+            The id of the Instagram Profile that owns this Instagram data.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramScraperDataset.Run">
+            <summary>
+            The navigation property of the Scraper Run that owns this Instagram Scraper Dataset.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramScraperDataset.InstagramProfile">
+            <summary>
+            The navigation property of the Instagram Profile that owns this Instagram data.
+            </summary>
+        </member>
+        <member name="T:rBR.BaseLibraries.Domain.Entity.InstagramFullObject">
+            <summary>
+            The class that gathers the complete data of the Instagram scraper objects.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramFullObject.Alt">
+            <summary>
+            The alternative text of the object.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramFullObject.Caption">
+            <summary>
+            The caption of the object.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramFullObject.ChildPosts">
+            <summary>
+            The child objects of this object.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramFullObject.CoauthorProducers">
+            <summary>
+            The list of coauthors of the object.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramFullObject.CommentsCount">
+            <summary>
+            The amount of comments of the object.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramFullObject.DimensionsHeight">
+            <summary>
+            The height dimension of the object.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramFullObject.DimensionsWidth">
+            <summary>
+            The width dimension of the object.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramFullObject.DisplayUrl">
+            <summary>
+            The display URL of the object.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramFullObject.FirstComment">
+            <summary>
+            The first comment the object had.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramFullObject.Id">
+            <summary>
+            The APIFY id of the data collected by the scraper.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramFullObject.Images">
+            <summary>
+            The list of images URL of the object.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramFullObject.IsSponsored">
+            <summary>
+            A flag indicating if the object's post was sponsored.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramFullObject.Hashtags">
+            <summary>
+            The hashtags that were used with the object.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramFullObject.InputUrl">
+            <summary>
+            The URL of the page that was monitored by the scraper.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramFullObject.LikesCount">
+            <summary>
+            The amount of likes of the object
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramFullObject.LatestComments">
+            <summary>
+            The latest comments of the object.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramFullObject.Mentions">
+            <summary>
+            The mentions the object had.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramFullObject.MusicInfo">
+            <summary>
+            The info of the objects music.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramFullObject.OwnerFullName">
+            <summary>
+            The full name of the owner of the object.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramFullObject.OwnerId">
+            <summary>
+            The id of the owner of the object.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramFullObject.OwnerUserName">
+            <summary>
+            The user name of the owner of the object.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramFullObject.ProductType">
+            <summary>
+            The type of product of the object.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramFullObject.ShortCode">
+            <summary>
+            The short reference code for the object.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramFullObject.Timestamp">
+            <summary>
+            The date and time when the object was posted.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramFullObject.TaggedUsers">
+            <summary>
+            The object's tagged users.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramFullObject.Type">
+            <summary>
+            The type of the object.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramFullObject.Url">
+            <summary>
+            The URL of the object that was collected by the scrapper.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramFullObject.VideoDuration">
+            <summary>
+            The duration of the object's video.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramFullObject.VideoPlayCount">
+            <summary>
+            The amount of times the object's video was started.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramFullObject.VideoUrl">
+            <summary>
+            The URL of the video of the object.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramFullObject.VideoViewCount">
+            <summary>
+            The amount of the times the object's video was watched.
+            </summary>
+        </member>
+        <member name="T:rBR.BaseLibraries.Domain.Entity.InstagramComment">
+            <summary>
+            The class that holds the properties of a comment.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramComment.Id">
+            <summary>
+            The id of the comment.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramComment.LikesCount">
+            <summary>
+            The amount of likes of the comment.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramComment.OwnerUserName">
+            <summary>
+            The user name of the owner of the comment.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramComment.OwnerProfilePicUrl">
+            <summary>
+            The URL of the picture of the owner of the comment.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramComment.Owner">
+            <summary>
+            The owner of the comment object.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramComment.Replies">
+            <summary>
+            The list of replies of the comment.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramComment.RepliesCount">
+            <summary>
+            The amount of replies of the comment.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramComment.Text">
+            <summary>
+            The text value of the comment.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramComment.Timestamp">
+            <summary>
+            The date and time when the comment was posted.
+            </summary>
+        </member>
+        <member name="T:rBR.BaseLibraries.Domain.Entity.InstagramOwner">
+            <summary>
+            The class that gathers the properties of the owner of a comment.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramOwner.Id">
+            <summary>
+            The id of the owner.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramOwner.FullName">
+            <summary>
+            The owner's full name.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramOwner.IsVerified">
+            <summary>
+            The flag indicating if the owner is a verified user.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramOwner.ProfilePicUrl">
+            <summary>
+            The URL of the owner's profile picture.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramOwner.UserName">
+            <summary>
+            The username of the owner.
+            </summary>
+        </member>
+        <member name="T:rBR.BaseLibraries.Domain.Entity.InstagramMusic">
+            <summary>
+            The class that gathers the properties of the object's music.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramMusic.AudioId">
+            <summary>
+            The id of the audio.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramMusic.ArtistName">
+            <summary>
+            The music's artist name.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramMusic.ShouldMuteAudio">
+            <summary>
+            A flag indicating if the music audio should be muted.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramMusic.ShouldMuteAudioReason">
+            <summary>
+            The reason for why the audio should be muted.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramMusic.SongName">
+            <summary>
+            The name of the music.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.InstagramMusic.UsesOriginalAudio">
+            <summary>
+            A flag indicating if the music uses the original audio.
+            </summary>
+        </member>
+        <member name="T:rBR.BaseLibraries.Domain.Entity.ListItems`1">
+            <summary>
+            The class that gathers the list of dataset items of a scraper and the listing properties.
+            </summary>
+        </member>
+        <member name="M:rBR.BaseLibraries.Domain.Entity.ListItems`1.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,`0)">
+            <summary>
+            The <see cref="T:rBR.BaseLibraries.Domain.Entity.ListItems`1"/>'s constructor.
+            </summary>
+            <param name="page">The page that is being listed.</param>
+            <param name="pageSize">The size of the page that is being listed.</param>
+            <param name="total">The total amount of items.</param>
+            <param name="showing">The amount of items being shown.</param>
+            <param name="datasetItems">The list of the dataset items.</param>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.ListItems`1.Page">
+            <summary>
+            The current page that is being listed.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.ListItems`1.PageSize">
+            <summary>
+            The size of the page.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.ListItems`1.Total">
+            <summary>
+            The total number of items.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.ListItems`1.Showing">
+            <summary>
+            The total amount that is being returned.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.ListItems`1.DatasetItems">
+            <summary>
+            The items of the dataset that is being listed.
+            </summary>
+        </member>
+        <member name="T:rBR.BaseLibraries.Domain.Entity.ScraperRun">
+            <summary>
+            The class representing the application's scrapers' runs.
+            </summary>
+        </member>
+        <member name="M:rBR.BaseLibraries.Domain.Entity.ScraperRun.#ctor">
+            <summary>
+            The <see cref="T:rBR.BaseLibraries.Domain.Entity.ScraperRun"/>'s default constructor.
+            </summary>
+        </member>
+        <member name="M:rBR.BaseLibraries.Domain.Entity.ScraperRun.#ctor(System.String,System.String,System.String,System.DateTimeOffset,System.DateTimeOffset,System.Guid)">
+            <summary>
+            The <see cref="T:rBR.BaseLibraries.Domain.Entity.ScraperRun"/>'s constructor for creating an <see cref="T:rBR.BaseLibraries.Domain.Entity.ScraperRun"/> object.
+            </summary>
+            <param name="dataId">The run's APIFY internal id.</param>
+            <param name="dataStatus">The run's APIFY internal status.</param>
+            <param name="datasetId">The id of the dataset to where the run data was saved.</param>
+            <param name="startedAt">The date and time when the run started.</param>
+            <param name="finishedAt">The date and time when the run finished.</param>
+            <param name="scraperId">The id of the Scraper that owns this Run.</param>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.ScraperRun.DataId">
+            <summary>
+            The run's APIFY internal id.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.ScraperRun.DataStatus">
+            <summary>
+            The run's APIFY internal status.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.ScraperRun.DatasetId">
+            <summary>
+            The id of the dataset to where the run data was saved.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.ScraperRun.StartedAt">
+            <summary>
+            The date and time when the run started.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.ScraperRun.FinishedAt">
+            <summary>
+            The date and time when the run finished.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.ScraperRun.Imported">
+            <summary>
+            The flag that indicates if a Run was imported.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.ScraperRun.ImportingError">
+            <summary>
+            The description of a possible error while importing a Run.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.ScraperRun.ScraperId">
+            <summary>
+            The id of the Scraper that owns this Run.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.ScraperRun.Scraper">
+            <summary>
+            The navigation property of the Scraper that owns this Run.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.ScraperRun.InstagramProfiles">
+            <summary>
+            The navigation property of the Instagram Profiles that belongs to this Run.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Domain.Entity.ScraperRun.InstagramPosts">
+            <summary>
+            The navigation property of the Instagram Posts that belongs to this Run.
+            </summary>
+        </member>
+        <member name="T:rBR.BaseLibraries.Domain.Enumerator.BaseStatus">
+            <summary>
+            The class that represents the applications' objects' generic statuses.
+            </summary>
+        </member>
+        <member name="T:rBR.BaseLibraries.Domain.Enumerator.BaseStatus.EnumStatus">
+            <summary>
+            The statuses' enumerator.
+            </summary>
+        </member>
+        <member name="F:rBR.BaseLibraries.Domain.Enumerator.BaseStatus.EnumStatus.Active">
+            <summary>
+            The active status.
+            </summary>
+        </member>
+        <member name="F:rBR.BaseLibraries.Domain.Enumerator.BaseStatus.EnumStatus.Inactive">
+            <summary>
+            The inactive status.
+            </summary>
+        </member>
+        <member name="T:rBR.BaseLibraries.Domain.Enumerator.DatasetType">
+            <summary>
+            The class that represents the applications' objects' Dataset Types.
+            </summary>
+        </member>
+        <member name="T:rBR.BaseLibraries.Domain.Enumerator.DatasetType.EnumDatasetType">
+            <summary>
+            The dataset types' enumerator.
+            </summary>
+        </member>
+        <member name="F:rBR.BaseLibraries.Domain.Enumerator.DatasetType.EnumDatasetType.Instagram_Scraper">
+            <summary>
+            The Instagram Scraper type.
+            </summary>
+        </member>
+        <member name="F:rBR.BaseLibraries.Domain.Enumerator.DatasetType.EnumDatasetType.Instagram_Profile_Scraper">
+            <summary>
+            The Instagram Profile Scraper type.
+            </summary>
+        </member>
+        <member name="T:rBR.BaseLibraries.Domain.Enumerator.IndexInterval">
+            <summary>
+            The class that represents the applications' intervals for indexes analysis.
+            </summary>
+        </member>
+        <member name="T:rBR.BaseLibraries.Domain.Enumerator.IndexInterval.EnumIndexInterval">
+            <summary>
+            The intervals enumerator.
+            </summary>
+        </member>
+        <member name="F:rBR.BaseLibraries.Domain.Enumerator.IndexInterval.EnumIndexInterval.Five">
+            <summary>
+            The five days interval.
+            </summary>
+        </member>
+        <member name="F:rBR.BaseLibraries.Domain.Enumerator.IndexInterval.EnumIndexInterval.Ten">
+            <summary>
+            The ten days interval.
+            </summary>
+        </member>
+        <member name="F:rBR.BaseLibraries.Domain.Enumerator.IndexInterval.EnumIndexInterval.Fifteen">
+            <summary>
+            The fifteen days interval.
+            </summary>
+        </member>
+        <member name="F:rBR.BaseLibraries.Domain.Enumerator.IndexInterval.EnumIndexInterval.Month">
+            <summary>
+            The one month interval.
+            </summary>
+        </member>
+        <member name="F:rBR.BaseLibraries.Domain.Enumerator.IndexInterval.EnumIndexInterval.FortyFive">
+            <summary>
+            The fortyfive days interval.
+            </summary>
+        </member>
+        <member name="F:rBR.BaseLibraries.Domain.Enumerator.IndexInterval.EnumIndexInterval.TwoMnoths">
+            <summary>
+            The two months interval.
+            </summary>
+        </member>
+        <member name="F:rBR.BaseLibraries.Domain.Enumerator.IndexInterval.EnumIndexInterval.ThreeMonths">
+            <summary>
+            The three months interval.
+            </summary>
+        </member>
+        <member name="F:rBR.BaseLibraries.Domain.Enumerator.IndexInterval.EnumIndexInterval.FourMonths">
+            <summary>
+            The four months interval.
+            </summary>
+        </member>
+        <member name="F:rBR.BaseLibraries.Domain.Enumerator.IndexInterval.EnumIndexInterval.Semester">
+            <summary>
+            The six months interval.
+            </summary>
+        </member>
+        <member name="F:rBR.BaseLibraries.Domain.Enumerator.IndexInterval.EnumIndexInterval.Year">
+            <summary>
+            The twelve months interval.
+            </summary>
+        </member>
+        <member name="T:rBR.BaseLibraries.Domain.Interface.IBaseRepository`2">
+            <summary>
+            The interface of the class for inheriting and customizing database access methods from EF Core to the contexts.
+            </summary>
+            <typeparam name="TEntity">The object class for which this instance is being type-set.</typeparam>
+            <typeparam name="TContext">The context class for which this instance is being type-set.</typeparam>
+        </member>
+        <member name="M:rBR.BaseLibraries.Domain.Interface.IBaseRepository`2.AddAsync(`0)">
+            <summary>
+            The generic asynchronous method for registering a new object into the database.
+            </summary>
+            <param name="entity">The object to be registered.</param>
+            <returns>An object of the <see cref="T:System.Threading.Tasks.Task`1"/> type for the newly registered object.</returns>
+        </member>
+        <member name="M:rBR.BaseLibraries.Domain.Interface.IBaseRepository`2.AddRangeAsync(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            The generic async method that registers multiple objects of the same type to the database.
+            </summary>
+            <param name="entities">The object to register.</param>
+            <returns>An object of the <see cref="T:System.Threading.Tasks.Task`1"/> of type <see cref="T:System.Collections.Generic.IEnumerable`1"/> type for the newly registered objects.</returns>
+        </member>
+        <member name="M:rBR.BaseLibraries.Domain.Interface.IBaseRepository`2.FindAsync(System.Guid)">
+            <summary>
+            The generic asynchronous method for obtaining an Id-identified database object.
+            </summary>
+            <param name="id">The objects identifiying id.</param>
+            <returns>An object of the <see cref="T:System.Threading.Tasks.Task`1"/> type if any are found.</returns>
+        </member>
+        <member name="M:rBR.BaseLibraries.Domain.Interface.IBaseRepository`2.GetAsync(System.Collections.Generic.List{System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}}},System.String[])">
+            <summary>
+            The generic asynchronous method for retrieving single database objects, filtering them by a list of expressions/predicates.
+            </summary>
+            <param name="predicateExpressions">The filtering expressions/predicates.</param>
+            <param name="includeExpressions">The expressions to define the inner objects in the context data request.</param>
+            <returns>An object of the <see cref="T:System.Threading.Tasks.Task`1"/> type if any are found.</returns>
+        </member>
+        <member name="M:rBR.BaseLibraries.Domain.Interface.IBaseRepository`2.ListAsync(System.Collections.Generic.List{System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}}},System.String[],System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            The generic asynchronous method for listing database objects, filtering them by a list of expressions/predicates.
+            </summary>
+            <param name="predicateExpressions">The filtering expressions/predicates.</param>
+            <param name="includeExpressions">The expressions to define the inner objects in the context data request.</param>
+            <param name="page">The page that should be listed.</param>
+            <param name="pageSize">The size of the page that should be listed.</param>
+            <returns>Object of type <see cref="T:System.Collections.Generic.List`1"/> with objects of type TEntity registered in the database (or just in context).</returns >
+        </member>
+        <member name="M:rBR.BaseLibraries.Domain.Interface.IBaseRepository`2.Update(`0)">
+            <summary>
+            The generic method for updating an object of the database.
+            </summary>
+            <param name="entity">The object to be updated.</param>
+            <returns>An object of the <see cref="T:System.Threading.Tasks.Task`1"/> type for the updated object.</returns>
+        </member>
+        <member name="M:rBR.BaseLibraries.Domain.Interface.IBaseRepository`2.UpdateRange(System.Collections.Generic.List{`0})">
+            <summary>
+            The generic method for updating a list of objects of the database.
+            </summary>
+            <param name="entities">The list of objects to be updated.</param>
+            <returns>An object of the <see cref="T:System.Threading.Tasks.Task`1"/> of a <see cref="T:System.Collections.Generic.List`1"/> type for the updated objects.</returns>
+        </member>
+        <member name="M:rBR.BaseLibraries.Domain.Interface.IBaseRepository`2.Delete(`0)">
+            <summary>
+            The generic method for deleting an object from the database.
+            </summary>
+            <param name="entity">The object that will be deleted.</param>
+            <returns>
+            <list type="bullet">
+            <item>
+            <description><see langword="True"/>: if the process is successful;</description>
+            </item>
+            <item>
+            <description><see langword="False"/>: if process fails.</description>
+            </item>
+            </list>
+            </returns>
+        </member>
+        <member name="M:rBR.BaseLibraries.Domain.Interface.IBaseRepository`2.DeleteRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            The generic method for deleting a series of object from the database.
+            </summary>
+            <param name="entities">The objects that will be deleted.</param>
+            <returns>
+            <list type="bullet">
+            <item>
+            <description><see langword="True"/>: if the process is successful;</description>
+            </item>
+            <item>
+            <description><see langword="False"/>: if process fails.</description>
+            </item>
+            </list>
+            </returns>
+        </member>
+        <member name="M:rBR.BaseLibraries.Domain.Interface.IBaseRepository`2.CommitAsync">
+            <summary>
+            The asynchronous method that confirms all of the pending transactions.
+            </summary>
+            <returns>An <see cref="T:System.Int32"/> representing the number of entities that had their states' changes confirmed.</returns>
+        </member>
+        <member name="M:rBR.BaseLibraries.Domain.Interface.IBaseRepository`2.Dispose">
+            <summary>
+            The method for implementing the GC for this context.
+            </summary>
+        </member>
+        <member name="T:rBR.BaseLibraries.Domain.Interface.IBaseUnitOfWork">
+            <summary>
+            The interface of the base class for the implementation of the Unit of Work.
+            </summary>
+        </member>
+        <member name="M:rBR.BaseLibraries.Domain.Interface.IBaseUnitOfWork.CommitAsync">
+            <summary>
+            The asynchronous method that confirms all of the pending transactions.
+            </summary>
+            <returns>An <see cref="T:System.Int32"/> representing the number of entities that had their states' changes confirmed.</returns>
+        </member>
+        <member name="M:rBR.BaseLibraries.Domain.Interface.IBaseUnitOfWork.Dispose">
+            <summary>
+            The method for implementing the GC for this context.
+            </summary>
+        </member>
+    </members>
+</doc>

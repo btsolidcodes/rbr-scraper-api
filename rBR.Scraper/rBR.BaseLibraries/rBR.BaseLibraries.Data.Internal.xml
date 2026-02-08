@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>rBR.BaseLibraries.Data.Internal</name>
+    </assembly>
+    <members>
+        <member name="T:rBR.BaseLibraries.Data.Internal.Properties.DataInternalErrorMessages">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Data.Internal.Properties.DataInternalErrorMessages.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Data.Internal.Properties.DataInternalErrorMessages.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Data.Internal.Properties.DataInternalErrorMessages.ErrorAddingEntity">
+            <summary>
+              Looks up a localized string similar to Error while adding the {0} new register..
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Data.Internal.Properties.DataInternalErrorMessages.ErrorConfiguringContext">
+            <summary>
+              Looks up a localized string similar to Error while inside of {0}.OnConfiguring(DbContextOptionsBuilder dbContextOptionsBuilder)..
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Data.Internal.Properties.DataInternalErrorMessages.ErrorDeletingEntity">
+            <summary>
+              Looks up a localized string similar to Error while deleting the {0} register..
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Data.Internal.Properties.DataInternalErrorMessages.ErrorFindingEntity">
+            <summary>
+              Looks up a localized string similar to Error while finding the register of Id {0}..
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Data.Internal.Properties.DataInternalErrorMessages.ErrorModelingContext">
+            <summary>
+              Looks up a localized string similar to Error while inside of {0}.OnModelCreating(ModelBuilder modelBuilder)..
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Data.Internal.Properties.DataInternalErrorMessages.ErrorUpdatingEntity">
+            <summary>
+              Looks up a localized string similar to Error while updating the {0} register..
+            </summary>
+        </member>
+        <member name="T:rBR.BaseLibraries.Data.Internal.Repository.BaseRepository`2">
+            <summary>
+            The class for inheriting and customizing database access methods from EF Core to the contexts.
+            </summary>
+            <typeparam name="TEntity">The object class for which this instance is being type-set.</typeparam>
+            <typeparam name="TContext">The context class for which this instance is being type-set.</typeparam>
+        </member>
+        <member name="F:rBR.BaseLibraries.Data.Internal.Repository.BaseRepository`2._dbSet">
+            <summary>
+            The instance of the context db set for the model reference during the database access.
+            </summary>
+        </member>
+        <member name="M:rBR.BaseLibraries.Data.Internal.Repository.BaseRepository`2.#ctor(System.Lazy{`1})">
+            <summary>
+            The <see cref="T:rBR.BaseLibraries.Data.Internal.Repository.BaseRepository`2"/>'s constructor.
+            </summary>
+            <param name="context">The instance of the <see cref="T:System.Lazy`1"/> registered service for distributed access accross other services/classes.</param>
+        </member>
+        <member name="M:rBR.BaseLibraries.Data.Internal.Repository.BaseRepository`2.AddAsync(`0)">
+            <inheritdoc cref="M:rBR.BaseLibraries.Domain.Interface.IBaseRepository`2.AddAsync(`0)"/>
+        </member>
+        <member name="M:rBR.BaseLibraries.Data.Internal.Repository.BaseRepository`2.AddRangeAsync(System.Collections.Generic.IEnumerable{`0})">
+            <inheritdoc cref="M:rBR.BaseLibraries.Domain.Interface.IBaseRepository`2.AddRangeAsync(System.Collections.Generic.IEnumerable{`0})"/>
+        </member>
+        <member name="M:rBR.BaseLibraries.Data.Internal.Repository.BaseRepository`2.FindAsync(System.Guid)">
+            <inheritdoc cref="M:rBR.BaseLibraries.Domain.Interface.IBaseRepository`2.FindAsync(System.Guid)"/>
+        </member>
+        <member name="M:rBR.BaseLibraries.Data.Internal.Repository.BaseRepository`2.GetAsync(System.Collections.Generic.List{System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}}},System.String[])">
+            <inheritdoc cref="M:rBR.BaseLibraries.Domain.Interface.IBaseRepository`2.GetAsync(System.Collections.Generic.List{System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}}},System.String[])"/>
+        </member>
+        <member name="M:rBR.BaseLibraries.Data.Internal.Repository.BaseRepository`2.ListAsync(System.Collections.Generic.List{System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}}},System.String[],System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <inheritdoc cref="M:rBR.BaseLibraries.Domain.Interface.IBaseRepository`2.ListAsync(System.Collections.Generic.List{System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}}},System.String[],System.Nullable{System.Int32},System.Nullable{System.Int32})"/>
+        </member>
+        <member name="M:rBR.BaseLibraries.Data.Internal.Repository.BaseRepository`2.Update(`0)">
+            <inheritdoc cref="M:rBR.BaseLibraries.Domain.Interface.IBaseRepository`2.Update(`0)"/>
+        </member>
+        <member name="M:rBR.BaseLibraries.Data.Internal.Repository.BaseRepository`2.UpdateRange(System.Collections.Generic.List{`0})">
+            <inheritdoc cref="M:rBR.BaseLibraries.Domain.Interface.IBaseRepository`2.UpdateRange(System.Collections.Generic.List{`0})"/>
+        </member>
+        <member name="M:rBR.BaseLibraries.Data.Internal.Repository.BaseRepository`2.Delete(`0)">
+            <inheritdoc cref="M:rBR.BaseLibraries.Domain.Interface.IBaseRepository`2.Delete(`0)"/>
+        </member>
+        <member name="M:rBR.BaseLibraries.Data.Internal.Repository.BaseRepository`2.DeleteRange(System.Collections.Generic.IEnumerable{`0})">
+            <inheritdoc cref="M:rBR.BaseLibraries.Domain.Interface.IBaseRepository`2.DeleteRange(System.Collections.Generic.IEnumerable{`0})"/>
+        </member>
+        <member name="T:rBR.BaseLibraries.Data.Internal.Repository.BaseUnitOfWork`1">
+            <summary>
+            The base class for the implementation of the Unit of Work.
+            </summary>
+        </member>
+        <member name="F:rBR.BaseLibraries.Data.Internal.Repository.BaseUnitOfWork`1._dbContext">
+            <summary>
+            The instance of the <see cref="T:Microsoft.EntityFrameworkCore.DbContext"/> for the database access.
+            </summary>
+        </member>
+        <member name="M:rBR.BaseLibraries.Data.Internal.Repository.BaseUnitOfWork`1.#ctor(System.Lazy{`0})">
+            <summary>
+            The <see cref="T:rBR.BaseLibraries.Data.Internal.Repository.BaseUnitOfWork`1"/>'s constructor.
+            </summary>
+            <param name="context">The instance of the <see cref="T:System.Lazy`1"/> registered service for distributed access accross other services/classes.</param>
+        </member>
+        <member name="M:rBR.BaseLibraries.Data.Internal.Repository.BaseUnitOfWork`1.CommitAsync">
+            <summary>
+            The asynchronous method that confirms all of the pending transactions.
+            </summary>
+            <returns>An <see cref="T:System.Int32"/> representing the number of entities that had their states' changes confirmed.</returns>
+        </member>
+        <member name="M:rBR.BaseLibraries.Data.Internal.Repository.BaseUnitOfWork`1.Dispose">
+            <summary>
+            The method for implementing the GC for this context.
+            </summary>
+        </member>
+        <member name="M:rBR.BaseLibraries.Data.Internal.Repository.BaseUnitOfWork`1.TreatDataLayerException(System.Exception)">
+            <summary>
+            The private method that an exception was raised by the data context layer.
+            </summary>
+            <param name="exception">The exception to be trated.</param>
+            <returns>An <see cref="T:System.Exception"/> object with the database context layer informations configured.</returns>
+        </member>
+        <member name="T:rBR.BaseLibraries.Data.Internal.Settings.BaseContextSettings">
+            <summary>
+            The class for holding the properties that receive the static values of the Context Settings.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Data.Internal.Settings.BaseContextSettings.ConnectionStrings">
+            <summary>
+            The list of the all the available connection strings.
+            </summary>
+        </member>
+        <member name="T:rBR.BaseLibraries.Data.Internal.Settings.ConnectionStrings">
+            <summary>
+            A class that holds the details of connections for each database instance and context.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Data.Internal.Settings.ConnectionStrings.ContextName">
+            <summary>
+            The instance/context name.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Data.Internal.Settings.ConnectionStrings.ConnectionStringMySQL">
+            <summary>
+            The MySQL instance/database connection string.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Data.Internal.Settings.ConnectionStrings.ConnectionStringSQLServer">
+            <summary>
+            The SQL Server instance/database connection string.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Data.Internal.Settings.ConnectionStrings.DatabaseType">
+            <summary>
+            The indicator of database type.
+            </summary>
+        </member>
+    </members>
+</doc>

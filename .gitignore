@@ -1,0 +1,21 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/rBR.Scraper/.vs/rBR.Scraper
+/rBR.Scraper/rBR.Scraper.Service/bin/Debug/net8.0
+/rBR.Scraper/rBR.Scraper.Service/obj
+/rBR.Scraper/.vs/ProjectEvaluation/rbr.scraper.metadata.v9.bin
+/rBR.Scraper/.vs/ProjectEvaluation/rbr.scraper.projects.v9.bin
+/rBR.Scraper/.vs/ProjectEvaluation/rbr.scraper.strings.v9.bin
+/rBR.Scraper/rBR.Scraper.Application/bin/Debug/net8.0
+/rBR.Scraper/rBR.Scraper.Application/obj
+/rBR.Scraper/rBR.Scraper.Data.External/obj
+/rBR.Scraper/rBR.Scraper.Data.Internal/obj
+/rBR.Scraper/rBR.Scraper.Domain/obj
+/rBR.Scraper/rBR.Scraper.Infrastructure/bin/Debug/net8.0
+/rBR.Scraper/rBR.Scraper.Infrastructure/obj
+/rBR.Scraper/rBR.Scraper.Data.Internal/bin/Debug/net8.0
+/rBR.Scraper/rBR.Scraper.Domain/bin/Debug/net8.0
+/rBR.Scraper/rBR.Scraper.Data.External/bin/Debug/net8.0

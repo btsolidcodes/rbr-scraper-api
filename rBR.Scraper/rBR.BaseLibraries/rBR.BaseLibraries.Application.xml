@@ -1,0 +1,738 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>rBR.BaseLibraries.Application</name>
+    </assembly>
+    <members>
+        <member name="T:rBR.BaseLibraries.Application.Model.View.BaseCommonViewModel">
+            <summary>
+            The class that holds the visualization properties of the applications' objects common properties.
+            </summary>
+        </member>
+        <member name="M:rBR.BaseLibraries.Application.Model.View.BaseCommonViewModel.#ctor">
+            <summary>
+            The <see cref="T:rBR.BaseLibraries.Application.Model.View.BaseCommonViewModel"/>'s default/empty constructor.
+            </summary>
+        </member>
+        <member name="M:rBR.BaseLibraries.Application.Model.View.BaseCommonViewModel.#ctor(System.Guid,System.Int32,System.DateTimeOffset,System.Nullable{System.DateTimeOffset})">
+            <summary>
+            The <see cref="T:rBR.BaseLibraries.Application.Model.View.BaseCommonViewModel"/>'s default constructor.
+            </summary>
+            <param name="id">The data model objects' id.</param>
+            <param name="status">The data model objects' status.</param>
+            <param name="created">The data model objects' creation date and time.</param>
+            <param name="modified">The data model objects' last modification date and time.</param>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Model.View.BaseCommonViewModel.Id">
+            <summary>
+            The objects global unique identifier.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Model.View.BaseCommonViewModel.Status">
+            <summary>
+            The status of the object.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Model.View.BaseCommonViewModel.StatusId">
+            <summary>
+            The id of the status of the object.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Model.View.BaseCommonViewModel.Created">
+            <summary>
+            The date and time when the object was created.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Model.View.BaseCommonViewModel.Modified">
+            <summary>
+            The date and time when the object was created.
+            </summary>
+        </member>
+        <member name="M:rBR.BaseLibraries.Application.Model.View.BaseCommonViewModel.DescribedStatus(System.Int32)">
+            <summary>
+            The static method for retrieving the statuses' descriptions.
+            </summary>
+            <param name="statusId">The id of the status.</param>
+            <returns>A <see cref="T:System.String"/> object for the description of the status.</returns>
+        </member>
+        <member name="T:rBR.BaseLibraries.Application.Properties.BaseExceptionMessages">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Properties.BaseExceptionMessages.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Properties.BaseExceptionMessages.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Properties.BaseExceptionMessages.ExceptionErrorMessageClass">
+            <summary>
+              Looks up a localized string similar to |Class where the error took place: {0}..
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Properties.BaseExceptionMessages.ExceptionErrorMessageLine">
+            <summary>
+              Looks up a localized string similar to |Line where the error took place: {0}..
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Properties.BaseExceptionMessages.ExceptionErrorMessageLineUndefined">
+            <summary>
+              Looks up a localized string similar to |The line where the error took place is undefined..
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Properties.BaseExceptionMessages.ExceptionErrorMessageMethod">
+            <summary>
+              Looks up a localized string similar to |Method where the error took place: {0}..
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Properties.BaseExceptionMessages.HTTP_401">
+            <summary>
+              Looks up a localized string similar to |User is not authorized to access this resource..
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Properties.BaseExceptionMessages.HTTP_404_NotFound_Id">
+            <summary>
+              Looks up a localized string similar to |No objects were found for the given Id (id: {0})..
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Properties.BaseExceptionMessages.HTTP_409">
+            <summary>
+              Looks up a localized string similar to |An unexpected error happened with the provided information: please, contact the application&apos;s administrator..
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Properties.BaseExceptionMessages.HTTP_409_ArgumentException">
+            <summary>
+              Looks up a localized string similar to |The provided information can&apos;t be processed (no changes have been made)..
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Properties.BaseExceptionMessages.HTTP_409_DatabaseUpdate">
+            <summary>
+              Looks up a localized string similar to |An unexpected error happened when updating the database: please, contact the application&apos;s administrator..
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Properties.BaseExceptionMessages.HTTP_409_DuplicateIndexViolation">
+            <summary>
+              Looks up a localized string similar to |The provided information already exists: duplicated information is not allowed (no changes have been made)..
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Properties.BaseExceptionMessages.HTTP_422_BindingNullEmpty">
+            <summary>
+              Looks up a localized string similar to |The value [{0}] is not valid for the field [{1}]..
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Properties.BaseExceptionMessages.HTTP_422_BindingNullEmpty_Unknown">
+            <summary>
+              Looks up a localized string similar to |The value [null or empty (maybe caused by invalid format)] is not valid for the field [{0}]..
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Properties.BaseExceptionMessages.HTTP_500">
+            <summary>
+              Looks up a localized string similar to |An unknown error happened: please, contact the application&apos;s administrator..
+            </summary>
+        </member>
+        <member name="T:rBR.BaseLibraries.Application.Properties.BaseValidationErrorMessages">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Properties.BaseValidationErrorMessages.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Properties.BaseValidationErrorMessages.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Properties.BaseValidationErrorMessages.AtLeastOneField">
+            <summary>
+              Looks up a localized string similar to At least one of the following fields must have a value: {0}..
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Properties.BaseValidationErrorMessages.EmptyGuid">
+            <summary>
+              Looks up a localized string similar to The field [{PropertyName}] can&apos;t be an empty GUID..
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Properties.BaseValidationErrorMessages.ExactLength">
+            <summary>
+              Looks up a localized string similar to The [{PropertyName}] field must have an exact length of [{MaxLength}] characters..
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Properties.BaseValidationErrorMessages.InclusiveBetween">
+            <summary>
+              Looks up a localized string similar to The field [{PropertyName}] must be inclusive between [{From}] and [{To}]..
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Properties.BaseValidationErrorMessages.InvalidCNPJ">
+            <summary>
+              Looks up a localized string similar to The [{PropertyName}] field must be a valid CNPJ..
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Properties.BaseValidationErrorMessages.InvalidCNPJDescribed">
+            <summary>
+              Looks up a localized string similar to The [CNPJ] field must be a valid CNPJ..
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Properties.BaseValidationErrorMessages.InvalidEmail">
+            <summary>
+              Looks up a localized string similar to The [{PropertyName}] field must be a valid email..
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Properties.BaseValidationErrorMessages.InvalidEmptyField">
+            <summary>
+              Looks up a localized string similar to The field [{0}] is required and can&apos;t be empty..
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Properties.BaseValidationErrorMessages.InvalidEmptyGuid">
+            <summary>
+              Looks up a localized string similar to The field [{0}] can&apos;t be an empty GUID..
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Properties.BaseValidationErrorMessages.InvalidFutureDate">
+            <summary>
+              Looks up a localized string similar to The field [{0}] can&apos;t be a future date..
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Properties.BaseValidationErrorMessages.InvalidFutureDatePropertyName">
+            <summary>
+              Looks up a localized string similar to The field [{PropertyName}] can&apos;t be a future date..
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Properties.BaseValidationErrorMessages.InvalidMaximumAge">
+            <summary>
+              Looks up a localized string similar to The user must be, at most, 100 years old..
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Properties.BaseValidationErrorMessages.InvalidMaximumPageSize">
+            <summary>
+              Looks up a localized string similar to The maximum allowed page size is [{0}]..
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Properties.BaseValidationErrorMessages.InvalidMinimumAge">
+            <summary>
+              Looks up a localized string similar to The user must be, at least, 18 years old..
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Properties.BaseValidationErrorMessages.InvalidMinimumPage">
+            <summary>
+              Looks up a localized string similar to The minimum allowed page is [{0}]..
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Properties.BaseValidationErrorMessages.InvalidMinimumPageSize">
+            <summary>
+              Looks up a localized string similar to The minimum allowed page size is [{0}]..
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Properties.BaseValidationErrorMessages.InvalidPhoneNumber">
+            <summary>
+              Looks up a localized string similar to The [{PropertyName}] field must be a valid phone number..
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Properties.BaseValidationErrorMessages.InvalidStatus">
+            <summary>
+              Looks up a localized string similar to The field [{0}] must be a value between [{1}] and [{2}]..
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Properties.BaseValidationErrorMessages.InvalidZipCode">
+            <summary>
+              Looks up a localized string similar to The [{PropertyName}] field must be a valid zip code..
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Properties.BaseValidationErrorMessages.MaximumLength">
+            <summary>
+              Looks up a localized string similar to The [{PropertyName}] field must have a maximum length of [{MaxLength}] characters..
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Properties.BaseValidationErrorMessages.MinimumLength">
+            <summary>
+              Looks up a localized string similar to The [{PropertyName}] field must have a minimum length of [{MinLength}] characters..
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Properties.BaseValidationErrorMessages.NotEmpty">
+            <summary>
+              Looks up a localized string similar to The field [{PropertyName}] can&apos;t be null or empty..
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Properties.BaseValidationErrorMessages.NotNull">
+            <summary>
+              Looks up a localized string similar to The field [{PropertyName}] can&apos;t be null..
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Properties.BaseValidationErrorMessages.StartDateGreaterThanFinishDate">
+            <summary>
+              Looks up a localized string similar to The field [{PropertyName}] can&apos;t be greater than the [{ComparisonValue}]..
+            </summary>
+        </member>
+        <member name="T:rBR.BaseLibraries.Application.Settings.BaseAuthSettings">
+            <summary>
+            The class that brings together the properties for Authentication and Authorization configurations.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.BaseAuthSettings.AuthorizationPolicySettings">
+            <summary>
+            The default confguration for the Application's Authorization Policy settings.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.BaseAuthSettings.JwtAuthenticationSettings">
+            <summary>
+            The default confguration for the Application's JWT Authentication settings.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.BaseAuthSettings.JwksSettings">
+            <summary>
+            The default confguration for the Application's JWT Security settings.
+            </summary>
+        </member>
+        <member name="T:rBR.BaseLibraries.Application.Settings.JwksSettings">
+            <summary>
+            The class for holding the properties that receive the static values of the JWKS Root Settings.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.JwksSettings.DefaultClockSkew">
+            <summary>
+            The JWT clock skew (interval between generation and consumption tolerance).
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.JwksSettings.Issuer">
+            <summary>
+            The JWT token issuer.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.JwksSettings.IssuerSigningKey">
+            <summary>
+            The JWT token issuer signing key.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.JwksSettings.Key">
+            <summary>
+            The JWT token credential key.
+            </summary>
+        </member>
+        <member name="T:rBR.BaseLibraries.Application.Settings.JwtAuthenticationSettings">
+            <summary>
+            The class for holding the properties that receive the static values of the JWKS Authentication Settings.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.JwtAuthenticationSettings.RequireAudience">
+            <summary>
+            The flag to set the Audience Requirement.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.JwtAuthenticationSettings.RequireExpirationTime">
+            <summary>
+            The flag to set the Token Expiration Requirement.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.JwtAuthenticationSettings.RequireHttpsMetadata">
+            <summary>
+            The flag to set HTTPS Metadata Requirement.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.JwtAuthenticationSettings.RequireSignedTokens">
+            <summary>
+            The flag to set the Signed Token Requirement.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.JwtAuthenticationSettings.SaveToken">
+            <summary>
+            The flag to set the hold of the Token.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.JwtAuthenticationSettings.ValidateAudience">
+            <summary>
+            The flag to set the Audience Validation Requirement.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.JwtAuthenticationSettings.ValidAudience">
+            <summary>
+            The JWT token destinated audience.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.JwtAuthenticationSettings.ValidateLifetime">
+            <summary>
+            The flag to set the Lifetime Validation Requirement.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.JwtAuthenticationSettings.ValidateIssuer">
+            <summary>
+            The flag to set the Issuer Validation Requirement.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.JwtAuthenticationSettings.ValidateIssuerSigningKey">
+            <summary>
+            The flag to set the Issuer Signing Key Validation Requirement.
+            </summary>
+        </member>
+        <member name="T:rBR.BaseLibraries.Application.Settings.AuthorizationPolicySettings">
+            <summary>
+            The class for holding the properties that receive the static values of the Authorization and Authentication Settings.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.AuthorizationPolicySettings.AuthPolicies">
+            <summary>
+            The list of available/loaded policies.
+            </summary>
+        </member>
+        <member name="T:rBR.BaseLibraries.Application.Settings.AuthPolicy">
+            <summary>
+            The class for holding each of the policies detailed properties.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.AuthPolicy.Name">
+            <summary>
+            The name of the policy.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.AuthPolicy.Roles">
+            <summary>
+            The list of roles that define the policy requirements.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.AuthPolicy.Claims">
+            <summary>
+            The type of the properties for the policy.
+            </summary>
+        </member>
+        <member name="T:rBR.BaseLibraries.Application.Settings.Role">
+            <summary>
+            The class for holding the properties for the configured Roles.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.Role.Name">
+            <summary>
+            The name of the role.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.Role.Claims">
+            <summary>
+            The claims that constitute a role.
+            </summary>
+        </member>
+        <member name="T:rBR.BaseLibraries.Application.Settings.Claim">
+            <summary>
+            The class for holding the properties for the configured Claims.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.Claim.Type">
+            <summary>
+            The type of the claim.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.Claim.Values">
+            <summary>
+            The acceptable values for the claims.
+            </summary>
+        </member>
+        <member name="T:rBR.BaseLibraries.Application.Settings.BaseControllersSettings">
+            <summary>
+            The class that brings together the properties for Controllers configurations.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.BaseControllersSettings.SupportedCultures">
+            <summary>
+            The default Controllers' Supported Cultures for the application.
+            </summary>
+        </member>
+        <member name="T:rBR.BaseLibraries.Application.Settings.BaseCorsPolicySettings">
+            <summary>
+            The class that brings together the properties for CORS configurations.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.BaseCorsPolicySettings.Name">
+            <summary>
+            The name of the CORS policy.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.BaseCorsPolicySettings.Origins">
+            <summary>
+            The list of allowed origins for this policy.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.BaseCorsPolicySettings.Methods">
+            <summary>
+            The list of allowed methods for this policy.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.BaseCorsPolicySettings.Headers">
+            <summary>
+            The list of allowed headers for this policy.
+            </summary>
+        </member>
+        <member name="T:rBR.BaseLibraries.Application.Settings.BaseSwaggerSettings">
+            <summary>
+            The class that brings together the properties for Swagger configurations.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.BaseSwaggerSettings.Description">
+            <summary>
+            The default Swagger Documents description for this application
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.BaseSwaggerSettings.DocumentName">
+            <summary>
+            The default name of Swagger documents for this application.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.BaseSwaggerSettings.GenerateExampless">
+            <summary>
+            The flag to indicate example generation for the UI.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.BaseSwaggerSettings.GenerateXmlObjects">
+            <summary>
+            The flag for creating XML objects from the application's XML documents.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.BaseSwaggerSettings.Title">
+            <summary>
+            The default Swagger Docs title for this application.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.BaseSwaggerSettings.UseRouteNameAsOperationIds">
+            <summary>
+            The flag to set route names as operation IDs.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.BaseSwaggerSettings.UseControllerSummaryAsTagDescription">
+            <summary>
+            The flag to set controller summaries as tag descriptions.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.BaseSwaggerSettings.UseXmlDocumentation">
+            <summary>
+            The flag to set controller summaries as descriptions.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.BaseSwaggerSettings.ApiExplorer">
+            <summary>
+            The representation of the API explorer settings.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.BaseSwaggerSettings.OpenApiSecurityScheme">
+            <summary>
+            The representation of authentication settings via Swagger.
+            </summary>
+        </member>
+        <member name="T:rBR.BaseLibraries.Application.Settings.ApiExplorerSettings">
+            <summary>
+            The class that gathers the properties for API explorer breakdown settings.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.ApiExplorerSettings.GroupNameFormat">
+            <summary>
+            The pattern for grouping routes by name.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.ApiExplorerSettings.SubstitutionFormat">
+            <summary>
+            The default versioning information replacement for routes.
+            </summary>
+        </member>
+        <member name="T:rBR.BaseLibraries.Application.Settings.OpenApiSecuritySchemeSettings">
+            <summary>
+            The class that brings together the properties for configuring details of the names/information of the authentication steps for Swagger.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.OpenApiSecuritySchemeSettings.Name">
+            <summary>
+            The name of the header that will be used as the bearer of the authentication token.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Application.Settings.OpenApiSecuritySchemeSettings.Description">
+            <summary>
+            The description of how authentication information via Swagger should be used.
+            </summary>
+        </member>
+        <member name="T:rBR.BaseLibraries.Application.Utils.BaseEnvironmentInformation">
+            <summary>
+            The internal static class that holds the names of the environments.
+            </summary>
+        </member>
+        <member name="F:rBR.BaseLibraries.Application.Utils.BaseEnvironmentInformation.Local">
+            <summary>
+            The name of the local environment. Using local configurations/settings.
+            </summary>
+        </member>
+        <member name="F:rBR.BaseLibraries.Application.Utils.BaseEnvironmentInformation.LocalDevelopment">
+            <summary>
+            The name of the local environment. Using development configurations/settings.
+            </summary>
+        </member>
+        <member name="F:rBR.BaseLibraries.Application.Utils.BaseEnvironmentInformation.DevelopmentEnvironment">
+            <summary>
+            The name of the development environment. Using development configurations/settings.
+            </summary>
+        </member>
+        <member name="F:rBR.BaseLibraries.Application.Utils.BaseEnvironmentInformation.StagingEnvironment">
+            <summary>
+            The name of the staging environment. Using staging configurations/settings.
+            </summary>
+        </member>
+        <member name="F:rBR.BaseLibraries.Application.Utils.BaseEnvironmentInformation.ProductionEnvironment">
+            <summary>
+            The name of the production environment. Using production configurations/settings.
+            </summary>
+        </member>
+        <member name="M:rBR.BaseLibraries.Application.Utils.BaseEnvironmentInformation.CurrentEnvironmentName">
+            <summary>
+            The method for retrieving the name of the current environment.
+            </summary>
+            <returns>A <see cref="T:System.String"/> for the current environment name.</returns>
+        </member>
+        <member name="T:rBR.BaseLibraries.Application.Utils.BaseFormatTools">
+            <summary>
+            A class that assembles the most common and universal format toos.
+            </summary>
+        </member>
+        <member name="M:rBR.BaseLibraries.Application.Utils.BaseFormatTools.RetrieveTextBetweenChars(System.String,System.Char,System.Char)">
+            <summary>
+            The static method for retrieving a text that is located between 02 "consecutive" chars.
+            </summary>
+            <param name="text">The text to be treated.</param>
+            <param name="first">The first char.</param>
+            <param name="second">The second char.</param>
+            <returns>A <see cref="T:System.String"/> object extract from the original text.</returns>
+        </member>
+        <member name="M:rBR.BaseLibraries.Application.Utils.BaseFormatTools.CleanSerialNumber(System.String)">
+            <summary>
+            The static method for cleaning a serial number from special characters.
+            </summary>
+            <param name="serialNumber">The serial number to be treated.</param>
+            <returns>A <see cref="T:System.String"/> for the clean serial number.</returns>
+        </member>
+        <member name="M:rBR.BaseLibraries.Application.Utils.BaseFormatTools.CleanPhoneNumber(System.String)">
+            <summary>
+            The static method for cleaning a phone number from special characters, except the plus sign.
+            </summary>
+            <param name="phoneNumber">The phone number to be treated.</param>
+            <returns>A <see cref="T:System.String"/> for the clean phone number.</returns>
+        </member>
+        <member name="M:rBR.BaseLibraries.Application.Utils.BaseFormatTools.FormatCPF(System.String)">
+            <summary>
+            The static method for formatting CPFs serial numbers.
+            </summary>
+            <param name="cpf">The formatting CPF.</param>
+            <returns>A <see cref="T:System.String"/> for the formatted CPF.</returns>
+        </member>
+        <member name="M:rBR.BaseLibraries.Application.Utils.BaseFormatTools.FormatCNPJ(System.String)">
+            <summary>
+            The static method of formatting a CNPJ consisting only of numbers in a CNPJ according to the codes.
+            </summary>
+            <param name="cnpj">The CNPJ to be formatted.</param>
+            <returns>An object of type <see cref="T:System.String"/> for the formatted CNPJ.</returns>
+        </member>
+        <member name="T:rBR.BaseLibraries.Application.Utils.BaseValidation">
+            <summary>
+            The internal static class that holds the base common validations methods.
+            </summary>
+        </member>
+        <member name="M:rBR.BaseLibraries.Application.Utils.BaseValidation.ValidateCPF(System.String)">
+            <summary>
+            The static method for validating a CPF serial number.
+            </summary>
+            <param name="cpf">The CPF for validation.</param>
+            <returns>
+            <list type="bullet">
+            <item>
+            <description><see langword="True"/> if it is a valid CPF, and</description>
+            </item>
+            <item>
+            <description><see langword="False"/> if it is an invalid CPF.</description>
+            </item>
+            </list>
+            </returns>
+        </member>
+        <member name="M:rBR.BaseLibraries.Application.Utils.BaseValidation.ValidateCNPJ(System.String)">
+            <summary>
+            The static method for validating a CNPJ serial number.
+            </summary>
+            <param name="cnpj">The CNPJ for validation.</param>
+            <returns>
+            <list type="bullet">
+            <item>
+            <description><see langword="True"/> if it is a valid CNPJ, and</description>
+            </item>
+            <item>
+            <description><see langword="False"/> if it is an invalid CNPJ.</description>
+            </item>
+            </list>
+            </returns>
+        </member>
+        <member name="T:rBR.BaseLibraries.Application.Validator.BaseValidator`1">
+            <summary>
+            The base validation class for the fluent validation processes.
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+        </member>
+        <member name="M:rBR.BaseLibraries.Application.Validator.BaseValidator`1.#ctor">
+            <summary>
+            The <see cref="T:rBR.BaseLibraries.Application.Validator.BaseValidator`1"/>'s constructor.
+            </summary>
+        </member>
+        <member name="M:rBR.BaseLibraries.Application.Validator.BaseValidator`1.Validate(`0,System.Collections.Generic.List{FluentValidation.Results.ValidationFailure}@)">
+            <inheritdoc cref="M:rBR.BaseLibraries.Application.Validator.IBaseValidator`1.Validate(`0,System.Collections.Generic.List{FluentValidation.Results.ValidationFailure}@)"/>
+        </member>
+        <member name="M:rBR.BaseLibraries.Application.Validator.BaseValidator`1.Validate(`0,FluentValidation.Results.ValidationResult@)">
+            <inheritdoc cref="M:rBR.BaseLibraries.Application.Validator.IBaseValidator`1.Validate(`0,System.Collections.Generic.List{FluentValidation.Results.ValidationFailure}@)"/>
+        </member>
+        <member name="F:rBR.BaseLibraries.Application.Validator.BaseValidator`1.BrazilianFormattedPhoneNumberRegex">
+            <summary>
+            The brazilian phone formatted phone number regex rules.
+            </summary>
+        </member>
+        <member name="F:rBR.BaseLibraries.Application.Validator.BaseValidator`1.BrazilianPhoneNumberRegex">
+            <summary>
+            The brazilian phone unformatted phone number regex rules.
+            </summary>
+        </member>
+        <member name="T:rBR.BaseLibraries.Application.Validator.IBaseValidator`1">
+            <summary>
+            The interface of the base validation class for the fluent validation processes.
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+        </member>
+        <member name="M:rBR.BaseLibraries.Application.Validator.IBaseValidator`1.Validate(`0,System.Collections.Generic.List{FluentValidation.Results.ValidationFailure}@)">
+            <summary>
+            The method that applies the validation rules.
+            </summary>
+            <param name="instance">An instance of the object to be validated.</param>
+            <param name="validationFailures">A list of validation errors to support the validation results.</param>
+            <returns>
+            <list type="bullet">
+            <item>
+            <description><see langword="True"/> if the object is valid;</description>
+            </item>
+            <item>
+            <description><see langword="False"/> if the object is invalid.</description>
+            </item>
+            </list>
+            </returns>
+        </member>
+        <member name="M:rBR.BaseLibraries.Application.Validator.IBaseValidator`1.Validate(`0,FluentValidation.Results.ValidationResult@)">
+            <summary>
+            The method that applies the validation rules.
+            </summary>
+            <param name="instance">An instance of the object to be validated.</param>
+            <param name="validationResult">The validation result for the process.</param>
+            <returns>
+            <list type="bullet">
+            <item>
+            <description><see langword="True"/> if the object is valid;</description>
+            </item>
+            <item>
+            <description><see langword="False"/> if the object is invalid.</description>
+            </item>
+            </list>
+            </returns>
+        </member>
+    </members>
+</doc>

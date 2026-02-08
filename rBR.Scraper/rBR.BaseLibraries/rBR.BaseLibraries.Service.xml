@@ -1,0 +1,189 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>rBR.BaseLibraries.Service</name>
+    </assembly>
+    <members>
+        <member name="T:rBR.BaseLibraries.Service.Extension.BaseAuthExtension">
+            <summary>
+            The static extension class for setting and configuring authentication and authorization behaviors.
+            </summary>
+        </member>
+        <member name="M:rBR.BaseLibraries.Service.Extension.BaseAuthExtension.ConfigureAuthentication(System.ValueTuple{Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration})">
+            <summary>
+            The static method for configuring the authentication parameters.
+            </summary>
+            <param name="tupleServiceCollectionConfiguration">A <see cref="T:System.Tuple`2"/> of the service interface surface and application settings for distributed access across other services/classes.</param>
+        </member>
+        <member name="M:rBR.BaseLibraries.Service.Extension.BaseAuthExtension.ConfigureAuthorization(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            The static method for configuring the authorization policies and requirements.
+            </summary>
+            <param name="serviceCollection">The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> interface surface of registered services for distributed access across other services/classes.</param>
+        </member>
+        <member name="T:rBR.BaseLibraries.Service.Extension.BaseControllerExtension">
+            <summary>
+            The static extension class for setting and configuring the Controllers behaviors.
+            </summary>
+        </member>
+        <member name="M:rBR.BaseLibraries.Service.Extension.BaseControllerExtension.ConfigureControllers(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            The static method for configuring the controllers' behaviors.
+            </summary>
+            <param name="serviceCollection">The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> interface surface of registered services for distributed access across other services/classes.</param>
+        </member>
+        <member name="T:rBR.BaseLibraries.Service.Extension.BaseCorsExtension">
+            <summary>
+            The static extension class for setting and configuring CORS Policy properties.
+            </summary>
+        </member>
+        <member name="M:rBR.BaseLibraries.Service.Extension.BaseCorsExtension.ConfigureCors(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            The static method for configuring the CORS Policy.
+            </summary>
+            <param name="serviceCollection">The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> interface surface of registered services for distributed access across other services/classes.</param>
+        </member>
+        <member name="T:rBR.BaseLibraries.Service.Extension.BaseSwaggerExtension">
+            <summary>
+            The static extension class for setting and configuring the Swagger properties.
+            </summary>
+        </member>
+        <member name="M:rBR.BaseLibraries.Service.Extension.BaseSwaggerExtension.ConfigureSwagger(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            The static method for configuring Swagger's features/properties.
+            </summary>
+            <param name="serviceCollection">The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> interface surface of registered services for distributed access across other services/classes.</param>
+        </member>
+        <member name="T:rBR.BaseLibraries.Service.Filter.BaseCultureFilter">
+            <summary>
+            The class for filtering the requests culture by capturing them before the controllers' actions start.
+            </summary>
+        </member>
+        <member name="M:rBR.BaseLibraries.Service.Filter.BaseCultureFilter.#ctor(System.String[])">
+            <summary>
+            The <see cref="T:rBR.BaseLibraries.Service.Filter.BaseCultureFilter"/>'s constructor.
+            </summary>
+            <param name="supportedCultures">The current application supported cultures.</param>
+        </member>
+        <member name="M:rBR.BaseLibraries.Service.Filter.BaseCultureFilter.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            The implementation of the method executed before the start of controller actions (inherited from <see cref="T:Microsoft.AspNetCore.Mvc.Filters.IActionFilter"/>).
+            </summary>
+            <param name="context">The application's context where the action is "taking place".</param>
+        </member>
+        <member name="M:rBR.BaseLibraries.Service.Filter.BaseCultureFilter.OnActionExecuted(Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext)">
+            <summary>
+            The implementation of the method executed after the controller actions (inherited from <see cref="T:Microsoft.AspNetCore.Mvc.Filters.IActionFilter"/>).
+            </summary>
+            <param name="context">The application's context where the action "took place".</param>
+        </member>
+        <member name="M:rBR.BaseLibraries.Service.Filter.BaseCultureFilter.SetResources(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            A private method for centralizing the setting of the request properties of interest.
+            </summary>
+            <param name="request">The HTTP request that will be extracted of the properties of interest.</param>
+            <exception cref="T:System.ArgumentException">If there's any required information that is missing, or wrong.</exception>
+        </member>
+        <member name="T:rBR.BaseLibraries.Service.Filter.BaseExceptionTraceFilter">
+            <summary>
+            The filtering class that handles any global exceptions for the client side.
+            </summary>
+        </member>
+        <member name="M:rBR.BaseLibraries.Service.Filter.BaseExceptionTraceFilter.OnException(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            The override method to handle any exception that occurs in the application.
+            </summary>
+            <param name="exceptionContext">The context of the current triggered exception.</param>
+        </member>
+        <member name="T:rBR.BaseLibraries.Service.Filter.ExceptionsTypesNames">
+            <summary>
+            The internal static class that holds the names of the types of exceptions.
+            </summary>
+        </member>
+        <member name="T:rBR.BaseLibraries.Service.Utils.BaseCustomControllerBase">
+            <summary>
+            The base class for extending and customizing the <see cref="T:Microsoft.AspNetCore.Mvc.ControllerBase"/>.
+            </summary>
+        </member>
+        <member name="F:rBR.BaseLibraries.Service.Utils.BaseCustomControllerBase.ValidationErrors">
+            <summary>
+            The list that supports the error messages of the fluent validations' processes.
+            </summary>
+        </member>
+        <member name="M:rBR.BaseLibraries.Service.Utils.BaseCustomControllerBase.RequestRoute">
+            <summary>
+            The method for retrieving the user-requested route.
+            </summary>
+            <returns>A <see cref="T:System.String"/> containing the request route.</returns>
+        </member>
+        <member name="M:rBR.BaseLibraries.Service.Utils.BaseCustomControllerBase.RedirectionalRoute(System.String)">
+            <summary>
+            The method for setting the route that will be forwarded for a user.
+            </summary>
+            <param name="path">The path parameter for the assemble of the route.</param>
+            <returns>A <see cref="T:System.String"/> containing the forward route.</returns>
+        </member>
+        <member name="M:rBR.BaseLibraries.Service.Utils.BaseCustomControllerBase.CheckEmptyGuid(System.String,System.Guid)">
+            <summary>
+            The method for checking if a given Guid is empty.
+            </summary>
+            <param name="propertyName">The name of the property for the Guid.</param>
+            <param name="guid">The value of the Guid to be checked.</param>
+            <exception cref="T:System.ArgumentException">The exception that is thrown if the Guid is empty.</exception>
+        </member>
+        <member name="M:rBR.BaseLibraries.Service.Utils.BaseCustomControllerBase.CheckEmptyString(System.String,System.String)">
+            <summary>
+            The method for checking if a given String is empty.
+            </summary>
+            <param name="propertyName">The name of the property for the String.</param>
+            <param name="value">The value of the String to be checked.</param>
+            <exception cref="T:System.ArgumentException">The exception that is thrown if the String is empty.</exception>
+        </member>
+        <member name="T:rBR.BaseLibraries.Service.Utils.BaseErrorResponse">
+            <summary>
+            The class of representation and description of application errors to users.
+            </summary>
+        </member>
+        <member name="M:rBR.BaseLibraries.Service.Utils.BaseErrorResponse.#ctor(System.Collections.Generic.List{FluentValidation.Results.ValidationFailure})">
+            <summary>
+            The <see cref="T:rBR.BaseLibraries.Service.Utils.BaseErrorResponse"/>'s constructor for validation failure error messages.
+            </summary>
+            <param name="validationFailures">The list of validation failure error messages.</param>
+        </member>
+        <member name="M:rBR.BaseLibraries.Service.Utils.BaseErrorResponse.#ctor(System.Nullable{System.Int32},System.String)">
+            <summary>
+            The <see cref="T:rBR.BaseLibraries.Service.Utils.BaseErrorResponse"/>'s constructor for simple error messages and HTTP status codes.
+            </summary>
+            <param name="code">The error's HTTP status code.</param>
+            <param name="errorMessage">The error message.</param>
+        </member>
+        <member name="M:rBR.BaseLibraries.Service.Utils.BaseErrorResponse.#ctor(System.Exception,System.Nullable{System.Int32})">
+            <summary>
+            The <see cref="T:rBR.BaseLibraries.Service.Utils.BaseErrorResponse"/>'s constructor for exceptions.
+            </summary>
+            <param name="exception">The exception to be analyzed and extracted of the error information.</param>
+            <param name="code">The error's HTTP status code.</param>
+        </member>
+        <member name="M:rBR.BaseLibraries.Service.Utils.BaseErrorResponse.#ctor(Microsoft.AspNetCore.Mvc.ActionContext)">
+            <summary>
+            The <see cref="T:rBR.BaseLibraries.Service.Utils.BaseErrorResponse"/>'s constructor for binding errors.
+            </summary>
+            <param name="context">The <see cref="T:Microsoft.AspNetCore.Mvc.ActionContext"/> object that contains the binding exception information.</param>
+        </member>
+        <member name="P:rBR.BaseLibraries.Service.Utils.BaseErrorResponse.Code">
+            <summary>
+            The HTTP Status code for the error response.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Service.Utils.BaseErrorResponse.Date">
+            <summary>
+            The date and time when the error was triggered.
+            </summary>
+        </member>
+        <member name="P:rBR.BaseLibraries.Service.Utils.BaseErrorResponse.ErrorMessages">
+            <summary>
+            The list of detailed error messages.
+            </summary>
+        </member>
+    </members>
+</doc>
