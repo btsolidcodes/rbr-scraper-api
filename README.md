@@ -28,25 +28,24 @@ To authenticate in the rBR Scraper application with configured Authentication an
 * Method: POST;
 * Header: Content-Type: application/json;
 * Body:
-```
-{
-   "UserName":"{username}",
-   "Password":"{password}"
-}
-```
+	```
+	{
+	   "UserName":"{username}",
+	   "Password":"{password}"
+	}
+	```
 * Response:
-```
-{
-	"AccessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
-	"Expires": "06/05/2025 11:59:21 -03:00"
-}
-```
+	```
+	{
+		"AccessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+		"Expires": "06/05/2025 11:59:21 -03:00"
+	}
+	```
 ## Static Environment Configurations
 
 Several static configurations are necessary for the correct functioning of the application. Among them are: Authentication and Authorization, Database, CORS, Culture and Swagger.
 
 ### Security Settings for the JWT token (JWKS)
-
 The configuration file `appsettings.{*environment*}.json` must contain, inside the *BaseAuthSettings* object, the object:
 ```
 {
@@ -445,14 +444,14 @@ The file `appsettings.{*environment*}.json` must contain the object:
 
 1. **Requirements**
 
-   - Database - MySQL MariaDB v. 10.5.9 (can be obtained from the link [Download MariaDB](https://mariadb.org/download/?t=mariadb&p=mariadb&r=11.3.0)), and
-   - .NET 8.0 Runtime installed (can be obtained from the link [Download .NET](https://dotnet.microsoft.com/en-us/download/dotnet)).
+  - Database - MySQL MariaDB v. 10.5.9 (can be obtained from the link [Download MariaDB](https://mariadb.org/download/?t=mariadb&p=mariadb&r=11.3.0)), and
+  - .NET 8.0 Runtime installed (can be obtained from the link [Download .NET](https://dotnet.microsoft.com/en-us/download/dotnet)).
 
 2. **Local Configuration**
 
-   > At the current stage of the application, the only local configuration that needs to be done is the connection to the local database.
+	>At the current stage of the application, the only local configuration that needs to be done is the connection to the local database.
 
-   - Navigate to the **appsettings.json** file, open it with any text editor, and modify the property **ContextSettings.ConnectionStrings[0].ConnectionString**, filling it with your local database connection credentials:
+  - Navigate to the **appsettings.json** file, open it with any text editor, and modify the property **ContextSettings.ConnectionStrings[0].ConnectionString**, filling it with your local database connection credentials:
 	```
 	{
 	   "BaseContextSettings":{
@@ -470,76 +469,76 @@ The file `appsettings.{*environment*}.json` must contain the object:
  
 3. **Local Execution**
 
-> The instructions provided are valid for:
-> - Windows PowerShell;
-> - Developer PowerShell for VS 2022 (inside or outside the VS 2022 IDE), and
-> - Windows Command Prompt,
->
-> and must be executed in the order presented.
+	> The instructions provided are valid for:
+	> - Windows PowerShell;
+	> - Developer PowerShell for VS 2022 (inside or outside the VS 2022 IDE), and
+	> - Windows Command Prompt,
+	>
+	> and must be executed in the order presented.
 
 - In the chosen command prompt, run the following command to verify that the .NET runtime is available:
 
-`dotnet --info`
+	``dotnet --info``
 
-The command output should begin with information similar to:
-```
-.NET SDK:
-Version:           9.0.201
-Commit:            071aaccdc2
-Workload version:  9.0.200-manifests.a3a1a094
-MSBuild version:   17.13.13+1c2026462
-Runtime Environment:
-OS Name:     Windows
-OS Version:  10.0.19045
-OS Platform: Windows
-RID:         win-x64
-Base Path:   C:\Program Files\dotnet\sdk\9.0.201\
-Host:
-Version:      9.0.3
-Architecture: x64
-Commit:       831d23e561
-.NET SDKs installed:
-9.0.201 [C:\Program Files\dotnet\sdk]
-```
+	The command output should begin with information similar to:
+	```
+	.NET SDK:
+	Version:           9.0.201
+	Commit:            071aaccdc2
+	Workload version:  9.0.200-manifests.a3a1a094
+	MSBuild version:   17.13.13+1c2026462
+	Runtime Environment:
+	OS Name:     Windows
+	OS Version:  10.0.19045
+	OS Platform: Windows
+	RID:         win-x64
+	Base Path:   C:\Program Files\dotnet\sdk\9.0.201\
+	Host:
+	Version:      9.0.3
+	Architecture: x64
+	Commit:       831d23e561
+	.NET SDKs installed:
+	9.0.201 [C:\Program Files\dotnet\sdk]
+	```
 - In the chosen command prompt, navigate to the project root folder where the solution file `*.sln` is located. After navigating, list the directory contents and confirm you are in the correct location before proceeding:
 
-`cd {project_root_directory}`
-`dir`
+	`cd {project_root_directory}`
+	`dir`
 
-The `dir` command output should look something like:
-		Mode                 LastWriteTime         Length Name
-		----                 -------------         ------ ----
-		d-----          5/6/2025  10:26 AM                rBR.BaseLibraries
-		d-----         4/28/2025   1:29 PM                rBR.Scraper.Application
-		d-----         4/24/2025   3:20 PM                rBR.Scraper.Data.External
-		d-----          5/6/2025  10:59 AM                rBR.Scraper.Data.Internal
-		d-----         4/29/2025   4:36 PM                rBR.Scraper.Domain
-		d-----         4/28/2025   4:28 PM                rBR.Scraper.Infrastructure
-		d-----          5/6/2025  11:52 AM                rBR.Scraper.Service
-		-a----          5/2/2025  12:40 PM           5477 rBR.Scraper.sln
+	The `dir` command output should look something like:
+			Mode                 LastWriteTime         Length Name
+			----                 -------------         ------ ----
+			d-----          5/6/2025  10:26 AM                rBR.BaseLibraries
+			d-----         4/28/2025   1:29 PM                rBR.Scraper.Application
+			d-----         4/24/2025   3:20 PM                rBR.Scraper.Data.External
+			d-----          5/6/2025  10:59 AM                rBR.Scraper.Data.Internal
+			d-----         4/29/2025   4:36 PM                rBR.Scraper.Domain
+			d-----         4/28/2025   4:28 PM                rBR.Scraper.Infrastructure
+			d-----          5/6/2025  11:52 AM                rBR.Scraper.Service
+			-a----          5/2/2025  12:40 PM           5477 rBR.Scraper.sln
 
 - To ensure all necessary dependencies are available, clean the project and restore dependencies by running the following two commands:
-```
-dotnet clean
-dotnet restore
-```
+	```
+	dotnet clean
+	dotnet restore
+	```
 
 - After executing these operations, verify that the application can be built without errors by running:
 `dotnet build`
 
-The expected output is:
-	Build succeeded.
-	0 Warning(s)
-	0 Error(s)
+	The expected output is:
+		Build succeeded.
+		0 Warning(s)
+		0 Error(s)
 
 
 - After these steps, the final action is to run the application. Once started, it will be available at the address specified in the **launchSettings.json** file. To start the application, navigate to the folder containing the API service project `{*.Service.csproj}`. In that folder, run the application by passing the project file name as an argument. Assuming you are still in the project root folder, execute:
-```
-cd src\rBR.Analytics.Service
-dotnet run --project rBR.Analytics.Service.csproj
-```
+	```
+	cd src\rBR.Analytics.Service
+	dotnet run --project rBR.Analytics.Service.csproj
+	```
 
-Visit the application’s execution address and confirm it is working as expected:
-`https://localhost:5002/swagger/index.html`
+	Visit the application’s execution address and confirm it is working as expected:
+	`https://localhost:5002/swagger/index.html`
 
-To stop the application, simply press `Ctrl+C` in the command prompt you are using.
+	To stop the application, simply press `Ctrl+C` in the command prompt you are using.
